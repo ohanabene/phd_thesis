@@ -1,0 +1,182 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                                 %
+%         MODELO DE TESE/DISSERTAÇÃO - INSTITUTO DE FÍSICA - UNIVERSIDADE FEDERAL DE GOIÁS        %
+%                                by carriunix (stardate 1601.01)                                  %
+%                                 marcuscarriao at gmail dot com                                  %
+%                                                                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                                 %
+%                                      AVISOS (Leia com atenção)                                  %
+%                                                                                                 %
+% Este é um modelo NÃO OFICIAL para Teses e Dissertações para alunos do IF-UFG. A intenção deste  %
+% material é simplificar, padronizar e personalizar esses trabalhos científicos no âmbito da re-  %
+% ferida instituição. Antes de começar a usar este modelo tenha em mente:                         %
+%     (i) Ele não segue todas as normas da ABNT (apenas as esteticamente aceitáveis).             %
+%    (ii) O modelo é composto por 4 arquivos: UFGmodelo.tex, UFGpreambulo.tex, UFGlogo.png e      %
+% IFlogo.png (se você não tem algum desses, provavelmente vai ter problemas)                      %
+%   (iii) Este modelo não constitui uma "classe", ele usa um arquivo de definições para ser       %
+% usado "sobre" a classe "report" (nativo).                                                       %
+%    (iv) Uma série de pacotes serão necessários (todos parte do TeXlive), consulte as primei-    %
+% ras linhas do arquivo UFGpreambulo.tex para conhecê-los pessoalmente.                           %
+%     (v) Este não é um modelo "for dummies": se você fizer coisa errada... vai dar errado!       %
+%    (vi) Siga as instruções abaixo usando como referências as linhas do arquivo não modificado.  %
+%                                                                                                 %
+%                              INSTRUÇÕES (Leia com mais atenção ainda)                           %
+%                                                                                                 %
+%   l(76): Escolha as opções que achar conveniente ("oneside" e "twoside" estão disponíveis, mas  %
+% os elementos do PRÓLOGO serão sempre "oneside"), mas não altere a classe. Sugiro que você con-  %
+% tinue usando o tamanho 12pt (ABNT).                                                             %
+%   l(77): Verifique a codificação que você está utilizando.                                      %
+%   l(78): Seleção da fonte Times, sugerida por ser estéticamente mais agradável. Se você prefe-  %
+% rir usar a Arial (ABNT), comente essa linha e descomente a l(79).                               %
+%   l(81): Carregamento do preâmbulo. Verifique opções no próprio arquivo.                        %
+%   l(83): Por default, esse é um modelo para doutorandos, se você é um mestrando, comente essa   %
+% linha e descomente a seguinte l(84).                                                            %
+%   l(85): Entre com o título da sua Tese/Dissertação.                                            %
+%   l(86): Caso exista um subtítulo, descomente e preencha esta linha.                            %
+%   l(87): Seu nome.                                                                              %
+%   l(88): Nome do orientador já com a titulação.                                                 %
+%   l(89): Cidade.                                                                                %
+%   l(90): Ano com quatro dígitos.                                                                %
+%   l(91): Data da defesa no formato "01 de janeiro de 0001"                                      %
+%   l(92): Escreva a dedicatória (usando "\\" para saltar linha intencionalmente) ou use o coman- %
+% do "\input{file}".                                                                              %
+%   l(93): Escreva o texto de uma citação, que aparecerá em itálico e entre aspas.                %
+%   l(94): Nome do autor da citação, que aparecerá em negrito precedido por dois traços.          %
+%   l(95): Use a função "\input{file}" (preferencialmente) ou escreva o texto dos Agradecimentos. %
+%   l(96): Use a função "\input{file}" (preferencialmente) ou escreva o texto do Resumo.          %
+%   l(97): Use a função "\input{file}" (preferencialmente) ou escreva o texto do Abstract.        %
+%   l(98): Use a função "\input{file}" (preferencialmente) ou escreva o texto do Prefácio. Se vo- %
+% cê optar por não ter um Prefácio, comente essa linha e também a l(109).                         %
+%   l(102): Invocação da estrutura da capa (obrigatória).                                         %
+%   l(103): Invocação da estrutura da folha de rosto (obrigatória).                               %
+%   l(104): Invocação da estrutura da folha de aprovação (obrigatória apenas na versão final).    %
+%   l(105): Invocação da estrutura da dedicatória (opcional, comente se preferir não usar).       %
+%   l(106): Invocação da estrutura dos agradecimentos (opcional, comente se preferir não usar).   %
+%   l(107): Invocação da estrutura da epígrafe (opcional, comente se preferir não usar).          %
+%   l(108): Invocação da estrutura do resumos em português  e inglês (obrigatório). Usa espaça-   %
+% mento simples como sugerem as normas da ABNT.                                                   %
+%   l(109): Invocação da estrutura do prefácio (opcional, comente se preferir não usar).          %
+%   l(110): Invocação da estrutura do sumário (obrigatório).                                      %
+%   l(111): Inclua nesta linha outras listas (figuras, tabelas, abreviaturas, simbolos, etc) que  %
+% estejam sendo usadas no seu trabalho (elementos opcionais).                                     %
+%   l(113): Início da numeração arábica das páginas e dos Elementos Texuais. A partir daqui, es-  %
+% colha entre escrever o conteúdo diretamente neste arquivo ou usar a função "\input{file}" para  %
+% incluí-lo (preferencialmente).                                                                  %
+%   l(135): Informe o nome do arquivo BibTeX (*.bib) de referências.                              %
+%   l(136): Informe o estilo de apresentação das referências.                                     %
+%   l(137): Se você optar por inserir as referências manualmente (ou copiar o arquivo *.bbl), co- %
+% mente l(135) e l(136) e descomente o ambiente "thebibliography" l(137), l(138) e l(139).        %
+%   l(140): Início dos Apêndices, identificados com letras. Escreva o conteúdo diretamente neste  %
+% arquivo ou usar a função "\input{file}" para incluí-lo.                                         %
+%                                                                                                 %
+%                                       That's all, folks!                                        %
+%                                   May the Force be with you.                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[twoside,openright,12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CARREGANDO PREÂMBULO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{preamble.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INFORMAÇÕES GERAIS DA TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tipo
+\tipo{Dissertation} \grau{Doctor of Philosophy}
+%\tipo{Thesis} \grau{Master}
+
+
+\titulo{~\\A generic and expected long title added as a placeholder for actual long titles}
+%\newtoks\subtitulo \subtitulo{Morte e Obra} 
+\autor{Ohana Benevides Rodrigues}
+\orientador{Professor Mitchell Soderberg}
+\coorientador{}
+\cidade{Syracuse - NY}
+\ano{2022}
+\data{\date}
+
+
+\dedicatoria{To my parents, Andrea de Fátima Benevides and Luis Claudio Rocha Rodrigues.}
+
+
+\epigrafe{Knowledge emerges only through invention and reinvention, through the restless, impatient, continuing, hopeful inquiry human beings pursue in the world, with the world, and with each other.}
+\autordaepigrafe{Paulo Freire}
+
+
+\agradecimento{
+
+The acknowledgements.
+
+}
+
+
+\abstract{
+
+\lipsum[1-3]
+
+}
+
+%\prefacio{\lipsum[1-3]}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PRÓLOGO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\capa
+%\paginaTECA
+%\folhaderosto
+%\paginaFichaCatalografica
+\folhadeaprovacao
+\adedicatoria
+\notaagradecimento
+\acitacao
+%\resumos
+%\apresentacao
+\tableofcontents
+\listoffigures 
+\listoftables
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CORPO DA TESE/DISSERTAÇÃO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\inicio
+
+\chapter{Introduction}
+\input{Chapters/1.tex}
+
+\chapter{$\mu$ Decay At Rest $\nu_{e}$-LAr CC Cross Section in MicroBooNE}
+\input{Chapters/2.tex}
+
+\chapter{Short Baseline Neutrino Detector's (SBND) Anode Plane Assemblies (APA) Assembly and Installation}
+\input{Chapters/3.tex}
+
+\chapter{Novel LAr Purity Monitor Using Paul Traps}
+\input{Chapters/4.tex}
+
+% Apêndices
+\appendix % Não deletar
+\isappendixtrue % Não deletar
+\renewcommand\chaptername{Appendix}
+
+\chapter{An appendix title}
+\input{Appendices/A.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EPÍLOGO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{References}
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{10}
+
+% Escreva um simples arquivo com referências ou insira  o .bbl
+\input{References/R1.tex}
+
+
+\end{thebibliography}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIM DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

@@ -1,0 +1,333 @@
+\usepackage[left=3cm, right=2cm, top=3cm, bottom=2cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{acronym}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{icomma} 
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{arydshln}
+\usepackage{xspace}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{emptypage}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black
+}
+\urlstyle{same}
+
+\usepackage{etoolbox}
+\let\bbordermatrix\bordermatrix
+\patchcmd{\bbordermatrix}{8.75}{4.75}{}{}
+\patchcmd{\bbordermatrix}{\left(}{\left[}{}{}
+\patchcmd{\bbordermatrix}{\right)}{\right]}{}{}
+
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{bar}{\raisebox{0.75pt}{\space$\pmb{\vert}$\space}}
+\captionsetup{labelfont=bf,labelsep=bar,font=small, width=0.95\textwidth}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+
+
+\renewcommand{\arraystretch}{1.2}
+\newlength{\Oldarrayrulewidth}
+\newcommand{\Cline}[2]{%
+  \noalign{\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}}%
+  \noalign{\global\setlength{\arrayrulewidth}{#1}}\cline{#2}%
+  \noalign{\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}}
+}
+
+
+
+
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\fancyfoot[C]{\bfseries \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+\fancypagestyle{myheadings}{
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries \thepage}
+\fancyhead[LE,RO]{\bfseries \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+\onehalfspacing
+\newcommand{\verso}{\newpage\null\thispagestyle{empty}\newpage}
+\definecolor{ufgblue}{RGB}{240,255,240}
+
+
+\newif\ifisappendix
+\isappendixfalse
+
+\titleformat{\chapter}[display]
+  {\bfseries\huge}
+  {\vspace*{-3cm}\filright{\begin{tikzpicture}
+ 	\ifisappendix
+      % \draw[xshift=1.4cm, yshift=1cm,fill,color=ufgblue] (30:1cm) -- (90:1cm) -- (150:1cm) -- (210:1cm) -- (270:1cm) -- (330:1cm) -- (30:1cm);
+% Para imprimir o \chaptername antes no número/letra do capítulo/anexo, descomente a linha abaixo:
+       \draw[color=black] (-2.2cm,0.8cm) node { \fontsize{31.5}{41.5}\selectfont \chaptername };
+       \draw[color=black] (1.4cm,1.cm) node { \fontsize{41.5}{51.5}\selectfont \thechapter };
+    \else
+       %\draw[xshift=1.cm, yshift=1cm,fill,color=ufgblue] (30:1cm) -- (90:1cm) -- (150:1cm) -- (210:1cm) -- (270:1cm) -- (330:1cm) -- (30:1cm);
+% Para imprimir o \chaptername antes no número/letra do capítulo/anexo, descomente a linha abaixo:
+       %\draw[color=black] (-2.2cm,0.8cm) node { \fontsize{31.5}{41.5}\selectfont \chaptername };
+       \draw[color=black] (1.cm,1.cm) node { \fontsize{41.5}{51.5}\selectfont \thechapter };
+	\fi
+    \end{tikzpicture} } }
+  {2cm}
+  {\filleft}
+  [\vspace{-0.6cm}\rule{\textwidth}{1.6pt}\\ \vspace*{-1.05cm}\rule{\textwidth}{0.4pt}]
+
+\makeatletter
+
+
+\newcommand{\course}{Department of Physics\xspace}
+\newcommand{\college}{College of Arts and Sciences\xspace}
+\newcommand{\university}{Syracuse University\xspace}
+\newtoks\tipo
+\newcommand{\type}{\the\tipo\xspace}
+\newtoks\grau
+\newtoks\gt
+\newcommand{\degree}{\the\grau\xspace}
+\newtoks\titulo
+\renewcommand{\title}{\the\titulo\xspace}
+\newcommand{\subtitle}{\the\subtitulo\xspace}
+\newtoks\autor
+\renewcommand{\author}{\the\autor\xspace}
+\newtoks\cidade
+\newcommand{\local}{\the\cidade\xspace}
+\newtoks\ano
+\renewcommand{\year}{\the\ano\xspace}
+\newtoks\data
+\renewcommand{\date}{\the\data\xspace}
+\newtoks\orientador
+\newcommand{\advisor}{\the\orientador\xspace}
+\newtoks\coorientador
+\newcommand{\coadvisor}{\the\coorientador\xspace}
+\newtoks\dedicatoria
+\newtoks\epigrafe
+\newtoks\autordaepigrafe
+\newtoks\agradecimento
+\newtoks\resumo
+\newtoks\abstract
+\newtoks\prefacio
+
+
+\pagestyle{plain}
+
+\newcommand{\capa}{\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  \rule{12cm}{1.6pt}\\ \vspace*{-0.55cm}
+  \rule{12cm}{0.4pt}\\
+  \begin{minipage}[t][5.5cm][t]{11.5cm}
+  \vspace*{\fill}
+  \centering
+  \baselineskip=40pt
+  {\Huge \bf \title}\\[\baselineskip]
+  \ifx\subtitulo\undefined
+  \vspace{0.1cm}
+  \else
+  {\Large \itshape \subtitle}\\[0.2\baselineskip]
+  \fi
+  \vspace*{\fill}
+  \end{minipage}\\
+  \rule{12cm}{0.4pt}\\ \vspace*{-0.5cm}
+  \rule{12cm}{1.6pt}\\[\baselineskip]
+  \vspace{0.5cm}
+  \includegraphics[width=3.8cm]{Logos/SYRACUSE_heritage_ORANGE_RGB.png}\\
+  \vspace{1cm}
+  {\Large \author}\par
+  \vspace{1cm}
+  {\scshape \course}\\
+  {\scshape \college}\\
+  {\scshape \university}\\
+  \vfill
+  {\small \type presented as a partial fulfillment of the requirements for the degree of}\\[\baselineskip]
+  {\small\itshape \degree in Physics}\\[\baselineskip]
+  {\large\scshape \local}\\[\baselineskip]
+  {\small\scshape \year}\par
+  \vspace*{0.05\textheight}
+  \end{titlepage}%
+}
+
+\newcommand{\paginaTECA}{\begingroup
+  \thispagestyle{empty}
+  \centering
+  \vspace*{\fill}
+  {\Large Página dedicada ao Termo de Ciência e Autorização (TECA)}
+  \vspace*{\fill}
+  \endgroup
+  \newpage
+}
+
+
+\newcommand{\folhaderosto}{\begingroup
+  \thispagestyle{empty}
+  \centering
+  \begin{tabular}{p{2cm} p{10cm} p{2cm}}
+  \centering \includegraphics[width=2cm]{Logos/SYRACUSE_heritage_ORANGE_RGB.png} & \centering \vspace{-1.65cm} \scshape \university \par \college \par \course& \centering \includegraphics[width=2.5cm]{}\\
+  \end{tabular}\\
+  \vspace*{2cm}
+  \begin{minipage}[t][6cm][c]{12cm}
+  \centering
+  {\Large \author \\}
+  \vspace{1cm}
+  \baselineskip=30pt
+  {\Huge \title}
+  \ifx\subtitulo\undefined
+  \vspace{0.1cm}
+  \else
+  {\Large \itshape \subtitle}\\[0.2\baselineskip]
+  \fi
+  \end{minipage}\\[\baselineskip]
+  \hspace{7cm}
+  \begin{minipage}[t][5cm][t]{7cm}
+   %\type submitted to the \course of the \college of the \university, in partial fulfillment for the degree of \degree in Physics, under the advising of \advisor, with the co-advising of \coadvisor.
+   \type submitted to the \course of the \college of the \university, in partial fulfillment for the degree of \degree in Physics, under the advising of \advisor.
+
+  \end{minipage}\\
+  \vfill
+  {\large\scshape \local}\\[\baselineskip]
+  {\small\scshape \year}\par
+  \vspace*{0.05\textheight}
+  \endgroup
+  \newpage
+}
+
+
+\newcommand{\paginaFichaCatalografica}{\begingroup
+  \thispagestyle{empty}
+  \centering
+  \vspace*{\fill}
+  {\Large Página dedicada à FICHA CATALOGRÁFICA.}
+  \vspace*{\fill}
+  \endgroup
+  \newpage
+}
+
+
+
+\newcommand{\folhadeaprovacao}{\begingroup
+  \thispagestyle{empty}
+  \centering
+  \vspace*{\fill}
+  {\Large Substitua essa folha pela FOLHA DE APROVAÇÃO ou ATA DA DEFESA.}
+  \vspace*{\fill}
+  \endgroup
+  \verso
+}
+
+
+
+
+\newcommand{\adedicatoria}{\begingroup
+  \thispagestyle{empty}
+  \centering
+  \vspace*{\fill}
+  \hspace{7cm}
+  \begin{minipage}[t][5cm][t]{8.2cm}
+  {\itshape \vfill \hfill  \the\dedicatoria} 
+  \end{minipage}\\[\baselineskip]
+  \vspace*{3cm}
+  \endgroup
+  \verso
+}
+
+% small epigraph
+\newcommand{\acitacao}{\begingroup
+  \thispagestyle{empty}
+  \vspace*{\fill}
+  \hspace{7cm}
+  \begin{minipage}[t][5cm][t]{8.2cm}
+  \begin{raggedright}
+    \it ``\the\epigrafe"
+  \end{raggedright}  
+  \begin{flushright}
+	\bf \the\autordaepigrafe
+  \end{flushright}
+  \end{minipage}\\[\baselineskip]
+  \endgroup
+}
+
+%
+%% full line epigraph
+%\newcommand{\acitacao}{\begingroup
+%  \thispagestyle{empty}
+%  \vspace*{\fill}
+%  \begin{raggedright}
+%    \it ``\the\epigrafe"
+%  \end{raggedright}  
+%  \begin{flushright}
+%	\bf -- \the\autordaepigrafe
+%  \end{flushright}
+%  \endgroup
+%}
+
+
+\newcommand{\notaagradecimento}{\chapter*{Acknowledgements}
+  \addcontentsline{toc}{chapter}{\protect\numberline{}Acknowledgements}
+  \pagenumbering{roman}
+  \setcounter{page}{9}
+  \the\agradecimento
+  \vspace*{\fill}
+  \verso
+}
+
+\newcommand{\resumos}{\chapter*{Abstract}
+  \addcontentsline{toc}{chapter}{\protect\numberline{}Abstract}
+  \singlespacing
+  \the\abstract
+  \vspace*{\fill}
+  \onehalfspacing
+  \chapter*{Resumo}
+  \addcontentsline{toc}{chapter}{\protect\numberline{}Resumo}
+  \singlespacing 
+  \the\resumo
+  \vspace*{\fill}
+  \onehalfspacing
+  \verso
+}
+
+\newcommand{\apresentacao}{\chapter*{Preface}
+  \addcontentsline{toc}{chapter}{\protect\numberline{}Preface}
+  \singlespacing 
+  \the\prefacio
+  \vspace*{\fill}
+  \onehalfspacing
+}
+
+\newcommand{\inicio}{
+  \newpage
+  \pagestyle{myheadings}
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+  
+  \renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                    \thispagestyle{empty}%
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\@chapter\@schapter}
+                    
+}
