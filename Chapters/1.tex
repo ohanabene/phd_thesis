@@ -123,7 +123,7 @@ The next paper about neutrino oscillations was published two years later by V. G
 
 \subsection{Current Neutrino Oscillation Model}
 
-The current model of oscillations considers three neutrinos: The electron neutrino, the muon neutrino and the tau\footnote{The tau neutrino particle was detected in 1997 by The Direct Observation of NU Tau (DONuT) experiment at Fermilab \cite{tau_neutrino_discovery}.} 
+The current model of oscillations considers three neutrinos: The electron neutrino, the muon neutrino and the tau\footnote{The tau neutrino particle was detected in 1997 by The Direct Observation of NU Tau (DONuT) experiment at Fermi National Laboratory (Fermilab) \cite{tau_neutrino_discovery}.} 
 
 In this model, a neutrino flavor eigenstate with momentum $\vec{p}$ can be written as a linear combination of the neutrino mass eigenstates:
 %
@@ -215,6 +215,13 @@ Separating the exponential in the equation \ref{transition_probability} into rea
 %
 For the antineutrinos, the mathematical steps are similar \cite{oscillation_math}. 
 
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=1]{Figures/three_flavor_osc.jpg}
+		\caption[Three Flavor Oscillation Model]{\textbf{Three Flavor Oscillation Probabilities as a Function of L/E_{\nu}} Three Flavor Oscillation Probabilities as a Function of L/E_{\nu}, assuming the original state is $\nu_{\mu}$, \cite{Lauren_thesis}.}
+	\end{center}
+\end{figure}
+
 \subsubsection{First Neutrino Oscillation Measurements}
 The first oscillation measurements, and consequently the confirmation that neutrinos have mass, were made by the Super-Kamiokande experiment. The Super-Kamiokande detector is located 1 km underground in the Kamioka-mine, Hida-city, Gifu, Japan. It consists of a stainless-steel tank, with 39.3 m of diameter and 41.4 m tall, filled with 50,000 tons of ultra pure water. It has about of 13,000 photo-multipliers installed on the tank's wall (see image \ref{superk_picture}).
 In 1998 the Super-Kamiokande collaboration published the first neutrino oscillation measurements in a paper called ``Evidence for oscillation of atmospheric neutrinos" \cite{first_kamioka_measure}.
@@ -230,17 +237,35 @@ In 1998 the Super-Kamiokande collaboration published the first neutrino oscillat
 
 \section{Current Understanding of Neutrino Physics}
 
-At this point, please allow me to briefly summarize the understanding we current have of neutrinos, obtained through the experiments and studies I mentioned above and also by many other experiments I left out this historical overview. 
+At this point, allow me to briefly summarize the understanding we currently have of neutrinos, obtained through the experiments and studies I mentioned above and also by many other experiments I left out from this historical overview. 
 
-Neutrinos are chargeless leptons, with small, non-zero mass, that only interact through the weak force. So far we know of the existence of three types of them, that we call "flavor", and that are named after the charged lepton that accompanies them in charged-current weak interactions: eletron neutrino ($\nu_e$), muon neutrino ($\nu_{\mu}$), and tau neutrino ($\nu_{\tau}$). 
+Neutrinos are chargeless leptons with small non-zero mass that only interact through the weak force. So far, we know of the existence of three types of them, that we call "flavor", and that are named after the charged lepton that accompanies them in charged-current weak interactions: electron neutrino ($\nu_e$), muon neutrino ($\nu_{\mu}$), and tau neutrino ($\nu_{\tau}$). 
 
-The weak interaction is mediated by three bosons: The $Z^{0}$ boson, responsible to carrying the Neutral Current (NC) interactions, and the $W^{-}$ and $W^{+}$ bosons, responsible to carrying the Charged Current (CC) interactions.   
+The weak interaction is mediated by three bosons: The $Z^{0}$ boson, responsible for carrying the Neutral Current (NC) interactions, and the $W^{-}$ and $W^{+}$ bosons, responsible for carrying the Charged Current (CC) interactions. The Feymann Diagrams below represent said interactions. In the CC neutrino interactions, we have an incoming neutrino interacting with a nucleus' quark and producing a charged lepton, their neutrino counterpart, and a different nucleus' quark, such as to conserve charge number. In the NC the incoming and outgoing particle natures remain the same, but transfer momentum and energy. 
+
+We can observe different outcome final products from neutrino interactions, depending on the energy of the incoming neutrino. At lower energies, $\lessapprox 10$ GeV, the dominant processes will be quasi-elastic scattering (QE), where neutrinos scatter off of a nucleon, and resonance, where neutrinos scatter off of a nucleon that gets excited and decays. From $10$ GeV beyond, the dominant procress is Deep Inelastic Scattering (DIS) where neutrinos scatter directly off of nucleus' quarks.In figure \ref{nu_scatter} you can see a summary of the existing measurements of CC neutrino cross-section divided by neutrino energy and plotted as a function of energy. 
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.8]{Figures/nu_scatter.jpg}
+		\caption[nu_scatter]{ {\textbf{Total CC neutrino cross-section per nucleon as function of energy}} \\ Summary of the existing measurements of CC neutrino-nucleon cross-section divided by neutrino energy and plotted as a function of energy. The QE is in red, the resonance in blue, the DIS in green, and the black is the total cross-section, when considering all the previous processes \cite{nu_scatter_zeller}.}
+		\label{nu_scatter}	
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.8]{Figures/feymann_diag.jpg}
+		\caption[feymann_diag]{ {\textbf{Feymann Diagrams for the two types of weak interactions, CC and NC)}} \\ On the left, the Feymman diagram for a Charged Current interaction, carried by a W boson. On the right, the Feymman diagram for a Neutral Current interaction, carried by a Z boson, \cite{Lauren_thesis}.}
+		\label{nu_scatter}	
+	\end{center}
+\end{figure}
+
+%<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Cahnge Feymann Diagrams here!!! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 \subsubsection{The CP Symmetry Violating Phase Parameter}
 
 The $\delta$ parameter showed in the PMNS matrix in equation \ref{PMNS_factored} quantifies the charge conjugation and parity symmetry violation. The strong and electromagnetic interactions are invariant under CP symmetry, but some weak interaction processes are not. This violating phase parameter is also observed in the quark sector and was already measured. The CP symmetry violating phase parameter is still not observed in the lepton sector.
-
-
 
 \subsubsection{The Character of the Neutrino Mass Spectrum (Mass Hierarchy)}
 
@@ -296,14 +321,16 @@ In more recent results, experiments such as NuMI Off-axis $\nu_e$ Appearance (NO
 \end{figure} 
 
 
-\subsubsection{Low Energy Excess Problem}
+\subsubsection{Low Energy Excess (LEE) Anomalies}
 
+Over the past few decades, a number of neutrino experiments found inconsistencies between their expected un-oscillated neutrino flux at low energies and their measurements. Allow me to describe a few of them briefly. The Liquid Scintillator Neutrino Detector (LSND) at the Los Alamos Neutron Science Center published a paper in 2001 where they had found an excess of electron-like antineutrino events in a primarily $\nu_{\mu}$ beam \cite{lsnd}. Years later, the MiniBooNE Experiment probed the same $L/E_{\nu}$ region and also found an excess of electron-like neutrino and antineutrino events in a primarily $\nu_{\mu}$ and $\bar{\nu_{\mu}}$ respectively, depending of the polarity of the Booster Neutrino Beam (BNB). Due to limitations on MiniBooNE's detector technology to separate electron and photon showers, their analysis was inconclusive as to whether the excess was due to new physics or due to background mis-modeling, \cite{miniboone}. To address this issue, a new detector with better technology for particle identification was placed near MiniBooNE. This new experiment, named MicroBooNE, published its results recently, in 2021. In this new report, they did not find an excess of electron-like neutrino events, but could not refute MiniBooNE's excess either \cite{microboone_lee}. The favorite hypothesis for new physics that could explain the LEE phenomena is that there would exist a fourth neutrino, called sterile neutrino $\nu_s$. This neutrino, unlike the others, would only interact through the weak force and therefore would only be indirectly observed whenever oscillating from or to one of the other flavors, which would justify the LEE observed, \cite{Lauren_thesis}. 
+The LEE Anomaly and the of $\nu_s$s remain open questions in the field. 
 
 \section{LArTPCs in Neutrino Physics}
 Among a wide variety of detector technologies, Liquid Argon Time Projection Chambers (LArTPCs) present a set of characteristics particularly interesting to neutrino physics. 
 In a more general form, Time Projection Chambers were first proposed by David Nygren, in 1974 \cite{Nygren} and they consist of a volume filled with a sensitive gas or liquid in a strong ($\sim$500 V/cm) electrical field. When a charged particle passes through the active volume of the detector, the material is ionized, leaving behind a track of ionization charge. This ionization charge is then drifted by the electrical field towards wire planes, where sensitive electronics will record the induction signal, from the passing electrons throught the wires, and current, produced by the collection of the electrons by the last set of wires (see figure \ref{lartpc}). Using a two (or more) plane setup, with at least one being an induction plane and the other being a collection plane, and a light trigger to calculate the drift time of the electrons in the event, it is possible to have a three dimensional calorimetric reconstruction of the track (see figure \ref{lartpc_readout}).
 
-\begin{figure}[h!]
+\begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.1]{Figures/LARTPC.jpg}
 		\caption[LArTPC]{ {\textbf{Liquid Argon Time Projection Chamber}} \\ Liquid Argon Time Projection Chamber. When a particle passes through its fiducial volume and interacts with the liquid argon, ionization electrons and scintillation light are produced. The electric field drifts the electrons from where they are produced towards the planes of wires (right corner in the figure). Both charge and light produced are read by precision wires and a light collection system (in the figure, the orange bodies behind the wires), respectively.}
@@ -329,6 +356,37 @@ Not long after, in 1977, Carlo Rubia noted that using Liquid Argon (LAr) as acti
   	\item it is inert and and can be liquified with liquid nitrogen \cite{Rubia_ANewConcept}
 \end{itemize}
 
-Ever since, LArTPCs have been the technology of choice of many neutrino physics experiments, such as ICARUS \cite{ICARUS_proposal}, MicroBooNE \cite{MicroBooNE}, LArIAT \cite{LArIAT}, SBND \cite{SBND}, and DUNE \cite{DUNE_proposal} to name a few.  
-\section{The Deep Underground Neutrino Experiment}
+Ever since, LArTPCs have been the technology of choice of many neutrino physics experiments, such as  Imaging Cosmic and Rare Underground Signals (ICARUS), \cite{ICARUS_proposal}, MicroBooNE, \cite{MicroBooNE}, Short Baseline Neutrino Detector (SBND), \cite{SBND}, that together form the Short Baseline Neutrino (SBN) Program, and Deep Underground Neutrino Experiment (DUNE) \cite{DUNE_proposal}, to name a few. 
+
 \section{The Short Baseline Neutrino Program}
+
+In a new attempt to get to a conclusion regarding the LEE, described in session \ref{}, Fermilab created the SBN Program. The program consists of three LArTPCs (SBND, MicroBooNE, and ICARUS) all located along the BNB beam. The principle is that, by having three different detectors of the same technology, exposed to the same beam, and all positioned at a short-baseline range, we will be more accurately be able to constrain our flux of neutrinos and possibly have an answer to the LEE anomalies observed so far, and search for sterile neutrinos. Beyond that, it aims to study neutrino-nucleus scattering at the GeV energy scale and further develop LArTPC's construction and installation procedures, \cite{SBN}.
+
+Originally, ICARUS was, the first large-scale LArTPC to be used to further our understanding of neutrinos and was located underground at the The Gran Sasso National Laboratory and exposed to the CERN Neutrinos to Gran Sasso (CNGS) beamline \cite{ICARUS_proposal}. Most recently one of its modules, the T600, was refurbished, upgraded and has its new home at Fermilab, in the BNB beam. ICARUS T600 LArTPC is used as the far detector in the SBN Program. It is a $476$ton active mass LArTPC and it seats $600$ m from the target. 
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.6]{Figures/SBN.png}
+		\caption[SBN Program]{The Short-Baseline Neutrino Program detectors as seen from an upper view at Fermilab. To the right is the neutrino beam target area where 8 GeV protons from the Booster accelerator impinge a beryllium target. The beam is focused along the orange dashed line traveling toward the left (north). The SBND, MicroBooNE, and ICARUS, \cite{SBN}.
+		}
+		\label{sbn_program}
+	\end{center}
+\end{figure}
+
+The SBND is, as the name implies, the program's near detector and it consists of a $112$ton active mass LArTPC is at $110$ m from the target. It is currently under  installation phase and it is expected to be taking date mid-late next year,2023. In-between ICARUS and SBND, at $470$ m from the target, there is MicroBooNE, a $89$ton active volume LArTPC that has been taking da since 2015. Where each of the detectors are in the BNB beamline, at Fermilab, is illustrated in figure \ref{sbn_program}.
+I will later describe in more details SBND and MicroBooNE, as they are the experiments in which I've carried my Ph.D. work. 
+
+\section{The Deep Underground Neutrino Experiment}
+
+The Deep Underground Neutrino Experiment (DUNE) is by far the most promising experiment for neutrino physics, as it aims to measure the CP violating phase in the leptonic sector, to determine the character of the neutrino mass spectrum, and to make precision measurements of oscillation parameters. Beyond the neutrino physics goals, DUNE also aims to search for baryon number violating processes and to perform precision measurements of neutrinos from a core-collapse supernova within the Galaxy, if one happens during the experiment's operating period. 
+To accomplish such bold goals, DUNE counts with a near detector placed at Fermilab and a far detector at the Sanford Underground Research Laboratory in Lead, South Dakota. An intense neutrino beam of up to $2.4$ megawatts is produced at Fermilab, crosses the near detector, and travels $1,300$ kilometers downstream through Earth's crust to reach the far detector. In figure \ref{DUNE_full_schematic} you can see an schematic diagram of the experiment. 
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.55]{Figures/DUNE_full_schematic.pdf}
+		\caption[DUNE's full schematic]{ {\textbf{DUNE's full schematic.}} \\The figure shows the full DUNE's schematics, providing a view of the production of the neutrino beam, the Near Detector at Fermilab, the under crust travel of the beam, and the Far Detector at SURF \cite{DUNE_proposal}.}
+		\label{DUNE_full_schematic}	
+	\end{center}
+\end{figure}
+
+DUNE's far detector is made of 4 LArTPCs modules, of $10$ kton each. The plans for the near detector currently include a few different technologies and those are still being debated, but for the first phase of the experiment it will be a LAr-based detector designed with pixelated readout and optical segmentation, \cite{dune_snowmass_22}.
