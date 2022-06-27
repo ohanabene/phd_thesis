@@ -96,4 +96,28 @@ By changing the polarity of the magnetic horns, we can select the sign of the ch
     \label{beam_mode_uboone}
 \end{figure}
 
-\section{MicroBooNE's Data Acquisition and Processing}
+\section{MicroBooNE's Readout and Trigger Systems}
+
+As a surface detector, MicroBooNE's PMTs and TPC receive particle activities all the time, and recording all this data would be impossible. Additionally, only $2-3\%$ of the pulses of protons sent to the target (called "spills") to produce the neutrinos in the NuMI beam will create a neutrino interaction in MicroBooNE. We use a trigger system to decide what data is recorded.
+The trigger system starts with a signal from Fermilab's accelerator complex informing us they sent a new spill. This signal is our hardware (HW) trigger. The HW trigger gives a start to what we call the "beamgate window", in which we start the readout without any light intensity requirement (also known as "unbiased"), which lasts $23.4$ $\mu $s. This happens $1.6$ ms into the TPC readout frame. The NuMI beam spill time window goes from $5.64- 15.44$ $\mu$s into the beamgate window. The complete readout cycle takes 3 TPC readout frames, which takes a total of $4.8$ ms.
+The data collected is then passed to a buffer where a software will decide what will be permanently recorded on tape. This is our software (SW) trigger. To be recorded, the SW trigger requires the data to have at least $9.5$ PE of scintillation light in a time window of $4.69- 16.41$ $\mu$s from the beginning of the beamgate window. To account for some decline on the PMT's, during Run 3 the light requirement was updated to $5.75$ PE, \cite{numi_redmine}. 
+Around $14\%$ of all HW triggers pass the SW trigger conditions. 
+
+For a visual of the readout and trigger structure, please see the diagram in figure \ref{trig}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=130mm]{Figures/numi_trigger.jpg}
+    \caption{Structure of MicroBooNE's NuMI readout and trigger. \cite{krish_phd}.}
+    \label{trig}
+\end{figure}
+
+From the data collected, MicroBooNE produces three data streams:
+\begin{itemize}
+    \item NuMI: For this stream, the data has to pass both the hardware and software triggers described above. It is also referred to as "beam-on" data. 
+    \item EXT NuMI: This is some data that passes the light requirements of the software trigger but is outside the beamgate window. The light is produced by cosmic rays, and this data is essential for us to understand the background of the neutrino analysis. It is also called "beam-off" data. 
+    \item EXT unbiased: This is data that is not in the beamgate window but with no additional requirements. Data from this stream is used to make our simulated events more realistic, as we overlay them with the simulated neutrino interactions. The procedure we use for that is documented in \cite{afro_phd}. 
+\end{itemize}
+
+MicroBooNE has a similar data stream, readout and trigger systems for the BNB beam, but with its own time windows. The beamgate window for the BNB and NuMI beams do not overlap. 
+
