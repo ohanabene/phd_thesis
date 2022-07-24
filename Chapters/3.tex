@@ -1,9 +1,54 @@
+The only supernova neutrinos detected to date was the SN1987A, from a supernova that happened at the Large Magellanic Cloud. A small amount of electron neutrinos from the event were observed at Kamiokande-II ($12 \nu_e$s), IMB ($8 \nu_e$s), and Baksan ($5 \nu_e$s). Despite the small dataset, a rich amount of analysis was published using the data, \cite{Kamiokande-II-PRL, Kamiokande-II-PRD, IMB, Baksan}. 
+ On the occasion of a core-collapse supernova in our galaxy, measuring the flux of neutrinos and antineutrinos from all flavors will significantly enlighten the fields of astrophysics and neutrino physics. Therefore, one of DUNE's goals is to be prepared for such an event, as it is the most potent detector to measure the electron neutrinos signal from a supernova, \cite{dune_SAND}.
+ In this chapter, I will explain the basics of supernovas and the neutrinos produced at them, why DUNE is particularly suitable to measure those neutrinos, and how using muos that decay at rest ($\mu$DARs) at the NuMI beam and interact in the MicroBooNE detector can help us improve neutrino-nucleus theoretical models and MeV-scale detection techniques in LArTPCs, which will be essential to accomplish the supernova detection in DUNE. 
+
 \section{Core-Collapse Supernova Neutrino Detection in DUNE}
+\subsubsection{Supernovas}
+Supernova is the name given to the explosive chain of events that happens during the death of some stars. Particularly, core-collapse supernovas produce a massive number of neutrinos and antineutrinos whose spectrum, if measured, can inform on characteristics of the explosion. 
+At the end of the life of a star that has $8-40$ solar masses, its body is made of concentric shells that were formed at each of its previous burning phases, them being: hydrogen, helium, carbon, neon, oxygen, and silicon, enveloping a core of nickel and iron. During its life, the stability of the star is a balance between the thermal pressure produced in the fusion process, which pulls everything in the outer direction, and its gravity pulling inward. When the mass of the iron core reaches $1.4$ solar masses, the pressure is not enough to balance the gravity, and the core starts to be compressed by the outer layers. Temperature and density in the core rise and the reaction
+
+\begin{equation}
+    e^{-} + p \longrightarrow n + \nu_e
+\end{equation}
+
+starts to happen more frequently, causing the pressure from electrons to lower even more and the star to collapse more rapidly. At the latest stages of the collapse, the density is such that even neutrinos get trapped in the core. Eventually, the pressure created by the nucleons degeneracy interrupts the collapse. The sudden stop of the collapse in the core causes a shock wave through the outer layers, and the star explodes. At the early stage of the shock wave, the density lowers, and the neutrinos manage to scape, creating an intense few-millisecond pulse called neutronization burst. 
+After the neutronization burst, outer layers of the star still falling innard manage to stall the shock wave briefly. This stage is called the accretion phase. We still don't understand why the shock wave regains energy enough to proceed. One hypothesis is that neutrino reactions produce sufficient heat for the thermal pressure to give continuity to the explosion. 
+Next, in the cooling phase, the star's energy is given away in many different processes that create neutrinos and antineutrinos of various flavors. A few of them are:
+
+\begin{align}
+    & \text{{\color{gray} electron pair annihilation:}}
+    && e^{-} + e^{+} \longrightarrow \nu + \bar{\nu}, \\
+    & \text{{\color{gray}electron-electron neutrino bremsstrahlung:}}
+    && e^{\pm} + e^{\pm} \longrightarrow e^{\pm} + e^{\pm} + \nu + \bar{\nu} \\
+    & \text{{\color{gray}electron-nucleon neutrino bremsstrahlung:}}
+    && e^{\pm} + N \longrightarrow e^{\pm} + N + \nu + \bar{\nu} \\
+    & \text{{\color{gray}photoannihilation:}}
+    && \gamma + e^{\pm} \longrightarrow e^{\pm} + N + \nu + \bar{\nu} \\
+    & \text{{\color{gray}nuclear de-excitation by neutrino pair production:}} 
+    && ^{Z}_{A}X^{*} \longrightarrow ^{Z}_{A}X + \nu + \bar{\nu}
+\end{align}
+
+Given the wide variety of processes, measuring the flux of neutrinos and antineutrinos from all flavors is fundamental to help us better understand aspects of the supernova and what role the processes that happen during the explosion play in its development, \cite{Gardiner_thesis}. 
+
+\subsubsection{Supernova detection in DUNE}
+
+We have in operation or planned for the future a number of large detectors that would be able to detect signals from a core-collapse supernova that happens in our galaxy. The active material of those detectors are all water Cherenkov or hydrocarbon scintillator, making them mainly sensitive to electron antineutrinos, via inverse beta decay (the reaction in equation \ref{inverse_beta_decay_eq}). 
+Therefore, relying solely on those detectors would preclude the measurement of the supernova eletron neutrino flux, which is by far the biggest component produced during the supernova's neutronization phase. 
+
+Luckily, DUNE's active material is liquid argon, which is mainly sensitive to eletron neutrinos, via charged current scattering in $^{40}$Ar, as in:
+
+\begin{equation}
+    \nu_e + ^{40}Ar \longrightarrow ^{40}K + e^{-}
+\end{equation}
+    
+
 \section{$\mu$ Decay At Rest ($\mu$DAR)-LAr Physics}
 \section{Simulation of $\mu$DAR Events in MicroBooNE}
 \subsection{NuMI Beamline Simulation}
 \subsection{GENIE and MARLEY}
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
+
+
 \section{Monte Carlo-Data Agreement}
 \section{Background Assessment}
 \section{Data Analysis}
