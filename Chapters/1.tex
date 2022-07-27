@@ -153,7 +153,7 @@ Where $\alpha$ is the corresponding lepton flavor ($e, \mu, \tau$), $|\nu_k\rang
 \end{equation}
 %
 where $c_{ij} \equiv \cos(\theta_{ij}), \ s_{ij} \equiv \text{sin}(\theta_{ij})$ and $\delta$ is the Charge Parity (CP) symmetry violating phase parameter.
-In equation \ref{PMNS_factored}, the three matrices represent different neutrino oscillation sectors. The left matrix represents the accelerator neutrino sector, the middle matrix represents the transition $\nu_e \rightarrow \nu_\tau$, that is present in both accelerator and reactor neutrino sectors, and the right matrix represents the reactor neutrino sector.
+In equation \ref{PMNS_factored}, the three matrices represent different neutrino oscillation sectors, named after the context in which those parameters are measured. The left matrix represents the accelerator (or atmospheric) neutrino sector, the middle matrix represents the transition $\nu_e \rightarrow \nu_\tau$, that is present in both accelerator and reactor neutrino sectors, and the right matrix represents the reactor (or solar) neutrino sector.
 
 Assuming that the flavor eigenstates are orthogonal, that the mass eigenstates are also orthogonal, that the PMNS matrix is unitary, that the neutrinos are oscillating in the vacuum, and also that the mass eigenstates are hamiltonian's eigenstates, we have that:
 %
@@ -245,7 +245,7 @@ At this point, allow me to briefly summarize the understanding we currently have
 
 Neutrinos are chargeless leptons with small non-zero mass that only interact through the weak force. So far, we know of the existence of three types of them, that we call "flavor", and that are named after the charged lepton that accompanies them in charged-current weak interactions: electron neutrino ($\nu_e$), muon neutrino ($\nu_{\mu}$), and tau neutrino ($\nu_{\tau}$). 
 
-The weak interaction is mediated by three bosons: The $Z^{0}$ boson, responsible for carrying the Neutral Current (NC) interactions, and the $W^{-}$ and $W^{+}$ bosons, responsible for carrying the Charged Current (CC) interactions. The Feynman diagrams below represent these interactions. In the CC neutrino interactions, we have an incoming neutrino interacting with a nucleus' quark and producing a charged lepton, their neutrino counterpart, and a different nucleus' quark, such as to conserve charge number. In the NC the incoming and outgoing particle natures remain the same, but transfer momentum and energy. 
+The weak interaction is mediated by three bosons: The $Z^{0}$, responsible for Neutral Current (NC) interactions; and the $W^{-}$ and $W^{+}$, responsible for Charged Current (CC) interactions, with both cases being represented by the Feynman diagrams in figure \ref{feymann_diag}. A CC neutrino-nucleus interaction changes the type of the quark it interacted with, and produces its respective charged lepton, conserving lepton number and charge, i.e. an electron neutrino will always produce an electron. In NC neutrino-nucleus interactions the incoming neutrino just transfers momentum to the nucleus, with no charged lepton or hadron production.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -255,18 +255,24 @@ The weak interaction is mediated by three bosons: The $Z^{0}$ boson, responsible
 	\end{center}
 \end{figure}
 
-We can observe different outcome final products from neutrino interactions, depending on the energy of the incoming neutrino. At lower energies, $\lessapprox 10$ GeV, the dominant processes will be quasi-elastic scattering (QE), where neutrinos scatter off of a nucleon, and resonance, where neutrinos scatter off of a nucleon that gets excited and decays. From $10$ GeV beyond, the dominant procress is Deep Inelastic Scattering (DIS) where neutrinos scatter directly off of nucleus' quarks.In figure \ref{nu_scatter} you can see a summary of the existing measurements of CC neutrino cross-section divided by neutrino energy and plotted as a function of energy. 
+We can observe different outcome final products from neutrino interactions, depending on the energy of the incoming neutrino. At lower energies, $\lessapprox 10$ GeV, the dominant processes will be quasi-elastic scattering (QE), where neutrinos scatter off, and ejects out, a single nucleon. For interaction energies above 1232 MeV (the $\Delta$ baryon mass) resonance becomes energetically allowed, and this becomes the dominant process up to $4$ GeV. In it, neutrinos scatter off of a nucleon that gets excited. The deexcitation of the nucleon leads to the emission of a pion and a nucleon. From $4$ GeV beyond, the dominant procress is Deep Inelastic Scattering (DIS) where neutrinos scatter directly off of nucleus' quarks, producing multiple hadrons in the final state. In figure \ref{nu_nucleus_int} you can see an inlustration of each of these interactions and its final products. In figure \ref{nu_scatter} you can see a summary of the existing measurements of CC neutrino cross-section divided by neutrino energy and plotted as a function of energy. 
 
 \begin{figure}[h!]
 	\begin{center}
-		\includegraphics[scale=0.9]{Figures/nu_scatter.jpg}
+		\includegraphics[scale=0.15]{Figures/neutrino_int_processes.jpeg}
+		\caption[Neutrino-nucleus interactions and their products]{ {\textbf{Neutrino-nucleus interactions and their products}} \\ The left diagram shows a quasi-elastic scattering, ejecting a single nucleon. The middle diagram shows a resonant interaction, which produces a single pion and a nucleon. The right diagram shows a deep inelatic scattering, which produces multiple hadrons \cite{afro_phd}.}
+		\label{nu_nucleus_int}	
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[scale=0.35]{Figures/nu_scatter.jpeg}
 		\caption[Total CC neutrino cross-section per nucleon as function of energy]{ {\textbf{Total CC neutrino cross-section per nucleon as function of energy}} \\ Summary of the existing measurements of CC neutrino-nucleon cross-section divided by neutrino energy and plotted as a function of energy. The QE is in red, the resonance in blue, the DIS in green, and the black is the total cross-section, when considering all the previous processes \cite{nu_scatter_zeller}.}
 		\label{nu_scatter}	
 	\end{center}
 \end{figure}
 
-
-%<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Change Feymann Diagrams here!!! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 \subsubsection{The CP Symmetry Violating Phase Parameter}
 
