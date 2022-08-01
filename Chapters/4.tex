@@ -39,6 +39,7 @@ Luckily, DUNE's active material is liquid argon, which is mainly sensitive to el
 
 \begin{equation}
     \nu_e + ^{40}Ar \longrightarrow ^{40}K + e^{-}
+    \label{nu_scatter_eq}
 \end{equation}
  
 An example of a contribution to neutrino physics that a supernova neutrino detection could make in DUNE is to shine light into the mass hierarchy puzzle. Figure \ref{dune_supernova} shows how the time distribution of the incoming flux of the neutrinos of a $10$ kpc supernova in DUNE could depend on the mass hierarchy. In the case of inverted hierarchy, we should see an early excess of events from the neutronization phase, whether, in the case of normal hierarchy, we should see the absence of such events. The results from figure \ref{dune_supernova} are made assuming a model describer in reference \cite{dune_supernova_model}, but those results are assumed to be fairly model-independent \cite{kate_scholberg}. 
@@ -46,38 +47,89 @@ An example of a contribution to neutrino physics that a supernova neutrino detec
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{Figures/dune_supernova.jpeg}
-    \caption[Predicted event time distribution for the detection of supernova neutrinos in a DUNE-like $40$ kt LArTPC]{{\textbf{Predicted event time distribution for the detection of supernova neutrinos in a DUNE-like 40 kt LArTPC}}\\ Predicted event time distribution for the detection of a $10$ kpc supernova neutrinos in a DUNE-like 40 kt LArTPC for each of the supernova stages. The blue curve assumes no oscillations, the green and the red curves assumes oscillations for inverted and normal mass hierarchy, respectively \cite{kate_scholberg}.}
+    \caption[Predicted event time distribution for the detection of supernova neutrinos in a DUNE-like $40$ kt LArTPC]{{\textbf{Predicted event time distribution for the detection of supernova neutrinos in a DUNE-like 40 kt LArTPC}}\\ Predicted event time distribution for the detection of a $10$ kpc supernova neutrinos in a DUNE-like 40 kt LArTPC for each of the supernova stages. The blue curve assumes no oscillations, the green and the red curves assume oscillations for inverted and normal mass hierarchy, respectively \cite{kate_scholberg}.}Furthermore, being able to measure the flux of both neutrinos and antineutrinos is fundamental to further understanding exotic supernova processes \cite{Friedland}.
     \label{dune_supernova}
 \end{figure}
 
 Furthermore, being able to measure the flux of both neutrinos and antineutrinos is fundamental to further understanding exotic supernova processes \cite{Friedland}. 
 
-\section{$\mu$ Decay At Rest-LAr Physics}
+\section{$\mu$ Decay At Rest $\nu_e$ Charged Current interactions in MicroBooNE}
 
-As promising as the DUNE supernova neutrino program is, we currently lack an understand of the MeV-scale neutrinos and LAr nucleus interactions, as well as LArTPC reconstruction capabilities and event identification at this energy range. 
+\subsection{$\mu$ Decay At Rest in MicroBooNE}
+As promising as the DUNE supernova neutrino program is, we currently lack an understanding of the MeV-scale neutrinos and LAr nucleus interactions, LArTPC reconstruction capabilities, and event identification at this energy range. 
 
-As mentioned before, MicroBooNE is exposed to the BNB and NuMI beamlines. When on the FHC, both beamlines produce a copious amount of antimuons that will, when decay to rest, produce a muon antineutrino, an electron neutrino, and a positron. On figures \ref{numi_nue_flux, numi_nu_flux} you can see the NuMI flux prediction of $\nu_e$s in MicroBoone by parents and the NuMI flux prediction in MicroBooNE of all neutrinos, respectively. 
+As mentioned before, MicroBooNE is exposed to the BNB and NuMI beamlines. When on FHC mode, both beamlines produce a copious amount of antimuons that will, when decaying at rest, produce a muon antineutrino, an electron neutrino, and a positron, as shown in equation \ref{mudar_decay_eq}. The energy spectrum of the electron neutrinos from this decay is well-known and can be seen in picture \ref{mudar_nue_energy}. In figures \ref{numi_nue_flux} and \ref{numi_nu_flux} you can see the NuMI flux prediction of $\nu_e$s in MicroBoone by parents and the NuMI flux prediction in MicroBooNE of all neutrinos, respectively. 
+
+\begin{equation}
+	\mu^{+} \longrightarrow e^{+} + \nu_e + \bar{\nu}_{\mu}
+    \label{mudar_decay_eq}
+\end{equation}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=110mm]{Figures/mudar_nue_energy.jpg}
+    \caption[Neutrino spectra of pion and muon decay at rest]{{\textbf{Neutrino spectra of pion and muon decay at rest}}\\ The red line is the energy of muon neutrinos from pion decay at rest, which is well-defined. The blue and the black lines refer to the energy spectrum of electron neutrinos and muon antineutrinos from positive muon decay at rest, respectively \cite{Yang2012}.}
+    \label{mudar_nue_energy}
+\end{figure}
+
+Due to the nature of the decay, the electron neutrino will have kinetic energy $0 \leqslant KE_{\nu_e} \leqslant 52.8$ MeV, which overlaps nicely with the energy range of the supernova electron neutrinos we aim to detect in DUNE!
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=180mm]{Figures/numi_nue_flux.jpeg}
-    \caption[NumI $\nu_e$ flux in MicroBooNE]{{\textbf{NumI $\nu_e$ flux in MicroBooNE}}\\ On the right, the FHC $\nu_e$ neutrino flux at MicroBooNE from NuMI broken down by parent. Althought there is a  60 MeV threshold included in the percentages, the absolute value clearly shows the dominance of muon decays. On the left, the FHC neutrino flux broken down by parent for each neutrino flavour. The percentages shown do not include an integration threshold on the angle. Decays from pions and muons dominate the majority of the flux across all angles \cite{krish_phd}.}
+    \caption[NumI $\nu_e$ flux in MicroBooNE]{{\textbf{NumI $\nu_e$ flux in MicroBooNE}}\\ On the right, the FHC $\nu_e$ neutrino flux at MicroBooNE from NuMI broken down by parent. Although a 60 MeV threshold is included in the percentages, the absolute value clearly shows the dominance of muon decays. On the left, the FHC neutrino flux is broken down by parent for each neutrino flavor. The percentages shown do not include an integration threshold on the angle. Decays from pions and muons dominate the majority of the flux across all angles \cite{krish_phd}.}
     \label{numi_nue_flux}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=135mm]{Figures/numi_nu_flux.jpeg}
-    \caption[NumI $\nu$ flux in MicroBooNE]{{\textbf{NumI $\nu$ flux in MicroBooNE}}\\ The flux prediction for all neutrino flavours in the FHC mode in neutrino angle. No integration thresh- old is applied in the percentages and the electron neutrino flux percentage is boosted by muon decay at rest. The large angular spread in the flux is due to the positioning of MicroBooNE with respect to the NuMI beamline. The flux peaks at the target location and tails off further into the beamline. From angles above $20$ deg, (midway into the decay pipe) the flux remains flat up to the absorber where there is a large peak in the flux spectrum $\approx 120$ deg. After this, the flux is attenuated rapidly going into the muon-shield $ \ge 120$ deg.\cite{krish_phd}.}
+    \includegraphics[width=130mm]{Figures/numi_nu_flux.jpeg}
+    \caption[NumI $\nu$ flux in MicroBooNE]{{\textbf{NumI $\nu$ flux in MicroBooNE}}\\ The flux prediction for all neutrino flavours in the FHC mode in neutrino angle. No integration threshold is applied in the percentages, and the electron neutrino flux percentage is boosted by muon decay at rest. The large angular spread in the flux is due to the positioning of MicroBooNE with respect to the NuMI beamline. The flux peaks at the target location and tails off further into the beamline. From angles above $20$ deg (midway into the decay pipe), the flux remains flat up to the absorber, where there is a large peak in the flux spectrum $\approx 120$ deg. After this, the flux is attenuated rapidly going into the muon-shield $ \ge 120$ deg.\cite{krish_phd}.}
     \label{numi_nu_flux}
 \end{figure}
+\newpage
 
-Due to the nature of the decay, the electron neutrino will have a kinectic energy $0 \leqslant KE_{\nu_e} \leqslant 50$ MeV, which is the same energy range of the supernova electron neutrinos we aim to detect in DUNE!
+\subsection{MeV-scale $\nu_e$-LAr Charged Current Interactions}
 
+As explicitly shown in the \ref{nu_scatter_eq}, when MeV-scale neutrinos scatter in $^{40}$Ar, we have as product a $^{40}\textrm{K}^{*}$ and a $e^{-}$. From now on, I will refer to this electron as the ``main" electron of the signal. The energy of the incoming neutrino can be reconstructed as:
 
+\begin{equation}
+    E_{\nu} = E_e + \Delta_{final-initial} + T_{recoil} 
+    \label{E_mudar_nu}
+\end{equation}
 
-decay math 
+where $E_e$ is the total energy of the outcoming electron and $T_{recoil}$ is the kinetic energy of the recoiling nucleon (which is negligible). As for $\Delta_{final-initial}$: 
 
+ \begin{equation}
+    \Delta_{final-initial} \equiv m_{final} - m_{initial}  
+    \label{delta_fi}
+\end{equation}
+
+where $m_initial$ is the mass of the initial $^{40}$Ar nucleus, and $m_{final}$ is the mass state of the $^{40}\textrm{K}^{*}$ nucleus. The potassium nucleus can be at different excited states, depending on the event. Therefore, $m_{final}$ can be further described as:
+
+\begin{equation}
+    m_{final} = m_{final, g.s.} + E_x
+    \label{mfinal}
+\end{equation}
+
+where $m_{final, g.s.}$ is the ground-state mass of a $^40$K nucleus and $E_x$ is the excitation energy. To reconstruct the total energy from the incoming neutrino, we need to look into the products from the de-excitation of the excited potassium nucleus, which are most commonly photons. Those photons can be indirectly measured in LArTPCs as they scatter on Ar atomic electrons, and the value of $\Delta_{final-initial}$ is given by:
+
+\begin{equation}
+    \Delta_{final-initial} = m_{g.s. \rightarrow g.s.} + \sum_{j}E_{\gamma, j}   
+    \label{delta_fi_2}
+\end{equation}
+
+where $E_{\gamma,j}$ is the energy of each of the photons emitted and $m_{g.s. \rightarrow g.s.}$ is the mass difference between the ground state of the $^{40}$K nucleus and the ground state of the $^{40}$Ar nucleus, which is $1.5044$ MeV. 
+It is also possible, although less likely, to have the excitation energy of the $^{40}$K high enough such that the de-excitation proceeds with the emission of a nucleon. A few of these channels still leave the daughter nucleus in an excited state, and there is an additional $\gamma$-ray or nucleon emission. This cascade continues until the daughter nucleus reaches the ground state. A diagram representing the different de-excitation channels can be seen in figure \ref{40K_deexcite}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=135mm]{Figures/40K_deexcitation.jpeg}
+    \caption[De-excitation channels from an excited $^{40}$K nucleus, product of a CC MeV-scale $\nu_e$-LAr scattering]{{\textbf{De-excitation channels from an excited $^{40}$K nucleus, product of a CC MeV-scale $\nu_e$-LAr scattering}}\\  The excited $^{40}$K nucleus can reach its ground state by emitting $\gamma$-ray(s) (middle diagram), a neutron (diagram on the left), or a proton (diagram on the right). In case the emission of a nucleon still leaves the daughter nucleus in an excited state, more photons are emitted until the ground state is reached \cite{Gardiner_thesis}.}
+    \label{40K_deexcite}
+\end{figure}
+
+The complexity of nuclear structures and the possible final state topologies for those interactions add challenges to the proper energy reconstruction of the supernova neutrino events. Therefore, it is fundamental that we take the opportunity presented by $\mu$DAR $\nu_e$s in MicroBooNE to study these interactions to improve our techniques. 
 
 
 \section{Simulation of $\mu$DAR Events in MicroBooNE}
@@ -86,11 +138,13 @@ To properly evaluate the $mu$DAR events in MicroBooNE, we count with a chain of 
 
 \subsection{NuMI Beamline Simulation}
 
-GET IT FROM KRISH'S THESIS
+NuMi >> BNB because addresses the 50 MeV threshold bla bla bla
 
 \subsection{GENIE and MARLEY}
 
-WHAT GENIE DOES AND HOW IT FAILS, AND HOW MARLEY SAVES THE DAY 
+WHAT GENIE DOES AND HOW IT FAILS (fermi gas, does not have nuclear structures-----> need something better that has nuclear shell model), AND HOW MARLEY SAVES THE DAY 
+
+
 
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
 
