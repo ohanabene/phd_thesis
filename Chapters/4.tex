@@ -164,6 +164,8 @@ Since the whole software structure of MicroBooNE was done using GENIE, we kept i
 After that, Geant4 takes over again and simulates the interactions of the outgoing particles of the neutrino-nucleus interactions and LAr. 
 
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
+
+To reconstruct the events in MicroBooNE, we count with a chain of reconstruction software that process the signal, carries it through a very low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal deconvolution algorithm, a Region of interest (ROI) finding algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the Monte Carlo (MC) simulation.  
 \subsection{ROI Finding}
 \subsection{Hit Finding}
 \subsection{Cluster Finding}
