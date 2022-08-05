@@ -135,37 +135,41 @@ The complexity of nuclear structures and the possible final state topologies for
 \section{Simulation of $\mu$DAR Events in MicroBooNE}
 
 To properly evaluate the $\mu$DAR events in MicroBooNE, we count with a chain of different simulation software to mimic the particle production and interactions at each step of the way, from the early stages of the beamline to MicroBooNE's detector response. 
-To explicitly name the sequence, we start at the NuMI beam flux simulation, to the Generates Events for Neutrino Interaction Experiments (GENIE) Generator, and to the Model of Argon Reaction Low Energy Yields (MARLEY) Generator, back to the GENIE again, then to GEANT4. All these softwares are integrated into a larger framework called the Liquid Argon Software (LArSoft). I will further go over each of these in this section. 
+To explicitly name the sequence, we start at the NuMI beam flux simulation, to the Generates Events for Neutrino Interaction Experiments (GENIE) Generator, and to the Model of Argon Reaction Low Energy Yields (MARLEY) Generator, back to the GENIE again, then to Geant4. All these softwares are integrated into a larger framework called the Liquid Argon Software (LArSoft). I will further go over each of these in this section. 
 
-\subsection{GEANT4}
+\subsection{Geant4}
 
  Geant4 \cite{g4} is a software toolkit that simulates the interaction of particles with matter. It can handle electromagnetic, decay, and hadronic physics interacting with complex geometries and variable EM fields. In MicroBooNE we use it during two steps of the simulation chain I described above: the NuMI beamline, and the propagation of the neutrino-LAr interaction products through LAr.
 
 \subsection{NuMI Beam Simulation}
 
-The NuMI beam flux simulation software has been continually developed by several experiments that use the NuMI beam, such as No$\nu$A, Main Injector Neutrino ExpeRiment to study $\nu-$A interactions (MINER$\nu$A) \cite{minerva}, and Main Injector Neutrino Oscillation Search (MINOS \cite{minos}. The software simulates the proton-target collision and its products, hadrons and muons that decay into neutrinos. MicroBooNE has two GEANT4 packages that can used in the NuMI beamline simulation to handle different physics models to describe the hadron production: the g4numi\_flugg and the g4numi. In the g4numi\_flugg, FLUKA software framework is used to model the hadron production and GEANT4 is used to handle the geometry of the beamline \cite{fluka}. In the g4numi, GEANT4 is used for both model the hadron production and to handle the beamline geometry. In this thesis, we used the latter. 
+The NuMI beam flux simulation software has been continually developed by several experiments that use the NuMI beam, such as No$\nu$A, Main Injector Neutrino ExpeRiment to study $\nu-$A interactions (MINER$\nu$A) \cite{minerva}, and Main Injector Neutrino Oscillation Search (MINOS \cite{minos}. The software simulates the proton-target collision and its products, hadrons and muons that decay into neutrinos. MicroBooNE has two Geant4 packages that can used in the NuMI beamline simulation to handle different physics models to describe the hadron production: the g4numi\_flugg and the g4numi. In the g4numi\_flugg, FLUKA software framework is used to model the hadron production and Geant4 is used to handle the geometry of the beamline \cite{fluka}. In the g4numi, Geant4 is used for both model the hadron production and to handle the beamline geometry. In this thesis, we used the latter. 
 The NuMI beam simulation also uses the Package to Predict the FluX (PPFX) to constrain the hadron production modeling and also propagate uncertainties through the beamline simulation \cite{ppfx}. Detailed description on the full NuMI beamline flux simulation can be found at \cite{krish}. 
 
-\subsection{GENIE}
+\subsection{GENIE and MARLEY}
+GENIE and MARLEY are software that falls in a specific category called ``neutrino event generators” and is specialized in neutrino-nucleus interactions. They are equipped with theoretical models of neutrino-nucleus interactions across a wide range of energies and targets. 
+GENIE is the standard event generator used by MicroBooNE for physics analysis. In it, the target nucleus is modeled as a relativistic Fermi gas, i. e., non-interacting nucleons confined in a constant potential well. This makes it unfit to mimic the neutrino-nucleus interactions at the MeV-scale since the nuclear level structure is relevant for the characteristics of our final products, as described in the previous section. 
+MARLEY, on the other hand, was designed to be especially capable of handling low-energy neutrino-nucleus interactions. It is based on a formalism to calculate low-energy neutrino-nucleus scattering called Walecka-Donnelly \cite{Walecka-Donnelly}. In it, it is:
+\begin{enumerate}
+ \item the field gauge boson is neglected, and the effective interaction Hamiltonian density at low energies is written as the leptonic current times the nuclear current.
+ \item the impulse approximation is taken, i. e., it is assumed that the matrix elements of the total nuclear current are the sum of the current of all the individual nucleon terms.
+ \item it is written down the most general form of the single-nucleon current operator consistent with symmetry constraints. An approximation to a given order (usually up to the first) is taken.
+ \item a multipole expansion of the nuclear current is performed \cite{Gardiner_thesis}. 
+\end{enumerate}
 
-\subsection{MARLEY}
+In the end, the cross-section is given by matrix elements of seven independent multipole operators, three for the vector current and four for the axial-vector current. These calculations are all explicitly done at \cite{Gardiner_thesis}.
 
-\subsection{LArSoft}
+Since the whole software structure of MicroBooNE was done using GENIE, we kept it in place, using MARLEY only to handle the neutrino-nucleus interactions, but using GENIE as a mediator between the beam simulation and MARLEY and then between MARLEY and Geant4. 
 
-\subsection{Overlay}
-
-
+After that, Geant4 takes over again and simulates the interactions of the outgoing particles of the neutrino-nucleus interactions and LAr. 
 
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
-
-\subsection{Signal finder}
-\subsection{Hit finder}
-\subsection{Blip finder}
-\subsection{Pandora}
+\subsection{ROI Finding}
+\subsection{Hit Finding}
+\subsection{Cluster Finding}
 \subsection{Blip Reconstruction}
-
-
-\subsection{$\mu$DAR events Truth versus Reco Comparitions}
+\subsubsection{$\mu$DAR events Truth versus Reco Comparitions}
+\subsection{Pandora}
 
 \section{Data Analysis}
 \subsection{Cosmic-rays Background Assessment}
