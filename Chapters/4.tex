@@ -134,31 +134,42 @@ The complexity of nuclear structures and the possible final state topologies for
 
 \section{Simulation of $\mu$DAR Events in MicroBooNE}
 
-To properly evaluate the $mu$DAR events in MicroBooNE, we count with a chain of different simulation softwares to mimic the particle production and interactions at each step of the way. The chain is as it follows: First, we use the NuMI beamline simulation to to simulate the flux of neutrinos from the NuMI in MicroBooNE, this flux prediction is then handed to GENIE, a neutrino event generator, that propagates the neutrino into MicroBooNE. Then, another neutrino generator software, MARLEY, simulates the $mu$DAR $\nu_e$-LAr interaction, returnes the output to GENIE, that passes the result down to GEANT4, to do the detector simulation. I will go over each of those steps and the reasons why they are organized like this int his Chapter.
+To properly evaluate the $\mu$DAR events in MicroBooNE, we count with a chain of different simulation software to mimic the particle production and interactions at each step of the way, from the early stages of the beamline to MicroBooNE's detector response. 
+To explicitly name the sequence, we start at the NuMI beam flux simulation, to the Generates Events for Neutrino Interaction Experiments (GENIE) Generator, and to the Model of Argon Reaction Low Energy Yields (MARLEY) Generator, back to the GENIE again, then to GEANT4. All these softwares are integrated into a larger framework called the Liquid Argon Software (LArSoft). I will further go over each of these in this section. 
 
-\subsection{NuMI Beamline Simulation}
+\subsection{GEANT4}
 
-NuMi >> BNB because addresses the 50 MeV threshold bla bla bla
+ Geant4 \cite{g4} is a software toolkit that simulates the interaction of particles with matter. It can handle electromagnetic, decay, and hadronic physics interacting with complex geometries and variable EM fields. In MicroBooNE we use it during two steps of the simulation chain I described above: the NuMI beamline, and the propagation of the neutrino-LAr interaction products through LAr.
 
-\subsection{GENIE and MARLEY}
+\subsection{NuMI Beam Simulation}
 
-WHAT GENIE DOES AND HOW IT FAILS (fermi gas, does not have nuclear structures-----> need something better that has nuclear shell model), AND HOW MARLEY SAVES THE DAY 
+The NuMI beam flux simulation software has been continually developed by several experiments that use the NuMI beam, such as No$\nu$A, Main Injector Neutrino ExpeRiment to study $\nu-$A interactions (MINER$\nu$A) \cite{minerva}, and Main Injector Neutrino Oscillation Search (MINOS \cite{minos}. The software simulates the proton-target collision and its products, hadrons and muons that decay into neutrinos. MicroBooNE has two GEANT4 packages that can used in the NuMI beamline simulation to handle different physics models to describe the hadron production: the g4numi\_flugg and the g4numi. In the g4numi\_flugg, FLUKA software framework is used to model the hadron production and GEANT4 is used to handle the geometry of the beamline \cite{fluka}. In the g4numi, GEANT4 is used for both model the hadron production and to handle the beamline geometry. In this thesis, we used the latter. 
+The NuMI beam simulation also uses the Package to Predict the FluX (PPFX) to constrain the hadron production modeling and also propagate uncertainties through the beamline simulation \cite{ppfx}. Detailed description on the full NuMI beamline flux simulation can be found at \cite{krish}. 
+
+\subsection{GENIE}
+
+\subsection{MARLEY}
+
+\subsection{LArSoft}
+
+\subsection{Overlay}
 
 
 
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
 
-\section{Monte Carlo-Data Agreement}
-
-energy plots
-position plots
-
-
-
+\subsection{Signal finder}
+\subsection{Hit finder}
+\subsection{Blip finder}
+\subsection{Pandora}
+\subsection{Blip Reconstruction}
 
 
+\subsection{$\mu$DAR events Truth versus Reco Comparitions}
 
-
-\section{Background Assessment}
 \section{Data Analysis}
+\subsection{Cosmic-rays Background Assessment}
+\subsection{NuMI GENIE $\nu_e$ Background Assessment}
+\subsection{NuMI GENIE $\nu_{\mu}$ Background Assessment}
+\subsection{Data}
 \section{Conclusion}
