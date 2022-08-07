@@ -146,10 +146,12 @@ To explicitly name the sequence, we start at the NuMI beam flux simulation, to t
 The NuMI beam flux simulation software has been continually developed by several experiments that use the NuMI beam, such as No$\nu$A, Main Injector Neutrino ExpeRiment to study $\nu-$A interactions (MINER$\nu$A) \cite{minerva}, and Main Injector Neutrino Oscillation Search (MINOS \cite{minos}. The software simulates the proton-target collision and its products, hadrons and muons that decay into neutrinos. MicroBooNE has two Geant4 packages that can used in the NuMI beamline simulation to handle different physics models to describe the hadron production: the g4numi\_flugg and the g4numi. In the g4numi\_flugg, FLUKA software framework is used to model the hadron production and Geant4 is used to handle the geometry of the beamline \cite{fluka}. In the g4numi, Geant4 is used for both model the hadron production and to handle the beamline geometry. In this thesis, we used the latter. 
 The NuMI beam simulation also uses the Package to Predict the FluX (PPFX) to constrain the hadron production modeling and also propagate uncertainties through the beamline simulation \cite{ppfx}. Detailed description on the full NuMI beamline flux simulation can be found at \cite{krish}. 
 
+Historically, both the NuMI beam and the BNB beam flux simulation had a minimum lower incoming neutrinos energy of $60$ MeV. This lower threshold was removed in the NuMI simulation, which, together with the higher flux of MeV-scale neutrinos, is why we opted to first perform this analysis using the NuMI beam instead of the BNB beam. 
+
 \subsection{GENIE and MARLEY}
 GENIE and MARLEY are software that falls in a specific category called ``neutrino event generators” and is specialized in neutrino-nucleus interactions. They are equipped with theoretical models of neutrino-nucleus interactions across a wide range of energies and targets. 
 GENIE is the standard event generator used by MicroBooNE for physics analysis. In it, the target nucleus is modeled as a relativistic Fermi gas, i. e., non-interacting nucleons confined in a constant potential well. This makes it unfit to mimic the neutrino-nucleus interactions at the MeV-scale since the nuclear level structure is relevant for the characteristics of our final products, as described in the previous section. 
-MARLEY, on the other hand, was designed to be especially capable of handling low-energy neutrino-nucleus interactions. It is based on a formalism to calculate low-energy neutrino-nucleus scattering called Walecka-Donnelly \cite{Walecka-Donnelly}. In it, it is:
+MARLEY, on the other hand, was designed to be especially capable of handling low-energy neutrino-nucleus interactions. It is based on a formalism to calculate low-energy neutrino-nucleus scattering called Walecka-Donnelly \cite{Walecka-Donnelly}. In it:
 \begin{enumerate}
  \item the field gauge boson is neglected, and the effective interaction Hamiltonian density at low energies is written as the leptonic current times the nuclear current.
  \item the impulse approximation is taken, i. e., it is assumed that the matrix elements of the total nuclear current are the sum of the current of all the individual nucleon terms.
@@ -159,17 +161,50 @@ MARLEY, on the other hand, was designed to be especially capable of handling low
 
 In the end, the cross-section is given by matrix elements of seven independent multipole operators, three for the vector current and four for the axial-vector current. These calculations are all explicitly done at \cite{Gardiner_thesis}.
 
-Since the whole software structure of MicroBooNE was done using GENIE, we kept it in place, using MARLEY only to handle the neutrino-nucleus interactions, but using GENIE as a mediator between the beam simulation and MARLEY and then between MARLEY and Geant4. 
+Since the whole software structure of MicroBooNE was done using GENIE, we kept it in place, using MARLEY only to handle the neutrino-nucleus interactions, but using GENIE as a mediator between the beam simulation and MARLEY and then between MARLEY and Geant4. Since our interest is solely on $\mu$DAR neutrinos, we assume a cross-section equal to zero to all incoming neutrinos with an energy higher than $60$ MeV. 
 
 After that, Geant4 takes over again and simulates the interactions of the outgoing particles of the neutrino-nucleus interactions and LAr. 
 
+\section{$\mu$DAR Monte Carlo Simulation in MicroBooNE}
+
+Using the structure described above, we produced a NuMI Monte Carlo (MC) simulation with a total of $number of POT$. For that POT, we end up with a total of $number of neutrinos$ near MicroBooNE, being $neutrinos$ inside the fiducial volume. The values fiducial volume dimensions can be seen in table \ref{fiducial}. The energy distribution of the simulated neutrinos and the electrons produced after the interaction, and the interaction vertex x, y and z positions can be seen in figures \ref{sim_dist_figures}.  
+
+\begin{table}
+	\begin{center}
+		\begin{tabular}{ccc}
+			\bottomrule
+						 \textbf{Coordinate}	&	\textbf{Lower limit (cm)}	&	\textbf{Higher Limit (cm)}\\
+			\toprule
+			x &	10 & 246.35 \\ 
+			y &	-106.5 & 106.5 \\
+			z &	10 & 968.8 \\ 
+			\toprule
+		\end{tabular}
+		\caption[MicroBooNE's LArTPC fiducial volume]{{\textbf{MicroBooNE's LArTPC fiducial volume}}}
+		\label{fiducial}
+	\end{center}
+\end{table}
+
+
+
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
 
-To reconstruct the events in MicroBooNE, we count with a chain of reconstruction software that process the signal, carries it through a very low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal deconvolution algorithm, a Region of interest (ROI) finding algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the Monte Carlo (MC) simulation.  
-\subsection{ROI Finding}
+To reconstruct the events in MicroBooNE, we count with a chain of reconstruction software that process the signal, carries it through a very low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal deconvolution algorithm, a Region of interest (ROI) finding algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the Monte Carlo simulation.  
+
+\subsection{Signal Deconvolution}
+Laurens thesis 
+
 \subsection{Hit Finding}
-\subsection{Cluster Finding}
+
+Avinay's Thesis
+
 \subsection{Blip Reconstruction}
+
+\subsubsection{Cluster Finding}
+\subsubsection{Plane Matching}
+
+Wills presentations 
+
 \subsubsection{$\mu$DAR events Truth versus Reco Comparitions}
 \subsection{Pandora}
 
