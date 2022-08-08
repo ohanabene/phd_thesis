@@ -150,11 +150,11 @@ Historically, both the NuMI beam and the BNB beam flux simulation had a minimum 
 
 \subsection{GENIE and MARLEY}
 GENIE and MARLEY are software that falls in a specific category called ``neutrino event generators” and is specialized in neutrino-nucleus interactions. They are equipped with theoretical models of neutrino-nucleus interactions across a wide range of energies and targets. 
-GENIE is the standard event generator used by MicroBooNE for physics analysis. In it, the target nucleus is modeled as a relativistic Fermi gas, i. e., non-interacting nucleons confined in a constant potential well. This makes it unfit to mimic the neutrino-nucleus interactions at the MeV-scale since the nuclear level structure is relevant for the characteristics of our final products, as described in the previous section. 
+GENIE is the standard event generator used by MicroBooNE for physics analysis. In it, the target nucleus is modeled as a relativistic Fermi gas, i.e., non-interacting nucleons confined in a constant potential well. This makes it unfit to mimic the neutrino-nucleus interactions at the MeV-scale since the nuclear level structure is relevant for the characteristics of our final products, as described in the previous section. 
 MARLEY, on the other hand, was designed to be especially capable of handling low-energy neutrino-nucleus interactions. It is based on a formalism to calculate low-energy neutrino-nucleus scattering called Walecka-Donnelly \cite{Walecka-Donnelly}. In it:
 \begin{enumerate}
  \item the field gauge boson is neglected, and the effective interaction Hamiltonian density at low energies is written as the leptonic current times the nuclear current.
- \item the impulse approximation is taken, i. e., it is assumed that the matrix elements of the total nuclear current are the sum of the current of all the individual nucleon terms.
+ \item the impulse approximation is taken, i.e., it is assumed that the matrix elements of the total nuclear current are the sum of the current of all the individual nucleon terms.
  \item it is written down the most general form of the single-nucleon current operator consistent with symmetry constraints. An approximation to a given order (usually up to the first) is taken.
  \item a multipole expansion of the nuclear current is performed \cite{Gardiner_thesis}. 
 \end{enumerate}
@@ -167,7 +167,7 @@ After that, Geant4 takes over again and simulates the interactions of the outgoi
 
 \section{$\mu$DAR Monte Carlo Simulation in MicroBooNE}
 
-Using the structure described above, we produced a NuMI Monte Carlo (MC) simulation with a total of $number of POT$. For that POT, we end up with a total of $number of neutrinos$ near MicroBooNE, being $neutrinos$ inside the fiducial volume. The values fiducial volume dimensions can be seen in table \ref{fiducial}. The energy distribution of the simulated neutrinos and the electrons produced after the interaction, and the interaction vertex x, y and z positions can be seen in figures \ref{sim_dist_figures}.  
+Using the structure described above, we produced a NuMI Monte Carlo (MC) simulation with a total of $5.74378 \times 10^{23}$ POT. For that POT amount, we have with a total of $131.687$ neutrinos interacting near MicroBooNE, being $50.605$ inside the fiducial volume. The values for the fiducial volume dimensions used in this analysis can be seen in table \ref{fiducial}. The energy distribution of the simulated neutrinos and the electrons produced after the interaction, and the interaction vertex x, y and z positions can be seen in figures \ref{sim_energy_dist_figures} and \ref{sim_vertex_dist_figures}, respectively.  
 
 \begin{table}
 	\begin{center}
@@ -185,18 +185,64 @@ Using the structure described above, we produced a NuMI Monte Carlo (MC) simulat
 	\end{center}
 \end{table}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=160mm]{Figures/NuMI_muDAR_Neutrino_Electron_Energy.jpeg}
+    \caption[Energy Distribution of Simulated $\mu$DAR $\nu_e$s from the NuMI Beam in MicroBooNE and the Electrons Produced in the Interaction]{{\textbf{Energy Distribution of Simulated $\mu$DAR $\nu_e$s from the NuMI Beam in MicroBooNE and the Electrons Produced in the Interaction}}\\}
+    \label{sim_energy_dist_figures}
+\end{figure}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=160mm]{Figures/NuMI_muDAR_vertex.jpeg}
+    \caption[Interaction Vertex Distribution of Simulated NuMI $\mu$DAR $\nu_e$s using MARLEY]{{\textbf{Interaction Vertex distribution of Simulated NuMI $\mu$DAR $\nu_e$s using MARLEY}}\\ .}
+    \label{sim_vertex_dist_figures}
+\end{figure}
+
+\newpage
 
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
 
-To reconstruct the events in MicroBooNE, we count with a chain of reconstruction software that process the signal, carries it through a very low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal deconvolution algorithm, a Region of interest (ROI) finding algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the Monte Carlo simulation.  
+To reconstruct the events in MicroBooNE, we count with a chain of reconstruction software that process the signal, carries it through a low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal noise filter, a deconvolution algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the Monte Carlo simulation.  
 
-\subsection{Signal Deconvolution}
-Laurens thesis 
+\subsection{Signal Processing}
+
+Once the detector captures the signals on represented on figure \ref{uboone_digital_signal}, we need to convert this raw signal into usable information. 
+Initially, the wires record any measured voltage as a function of time in the LArTPC during the readout window, which means it will include a lot of noise from various sources. Therefore, our first step is to pass the raw data through a noise filter algorithm. Deatils on it can be found on paper \cite{noise_filter}. You can see an example of the filters performance in figure \ref{noise_filter}. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=100mm]{Figures/noise_removal.jpeg}
+    \caption[MicroBooNE Software Noise Filter Performance]{{\textbf{MicroBooNE Software Noise Filter Performance}}\\ A 2D event display of the V plane from MicroBooNE data run $3493$, event $41075$ showing the raw signal (a) before and (b) after noise filtering. A clean event signature is recovered once all the identified noise sources are subtracted \cite{noise_filter}.}
+    \label{noise_filter}
+\end{figure}
+
+After removing the excess noise, we need to extract the drift electron distribution from the TPC wire signals from the waveforms. The way to do this is to pass them through a 2D deconvolution procedure based on Fast Fourier Transform. This procedure suffers from low-frequency noise on the two induction planes due to the bipolar shape of the measured signals. We solve this by only considering regions of interest (ROI) on the waveforms just large enough to cover the signal. Anything that is not inside the ROI is discarded. The ROI procedure is also performed in the collection plane to reduce the data stored. The final result from this signal processing is a deconvolved wire waveform, in which a single individual element of charge signal takes the form of a Gaussian function. On figure \ref{noise_deconv} you can see the impact of each of those steps on the data. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/noise_deconv.jpeg}
+    \caption[MicroBooNE Signal Processing Steps and Impact on Data]{{\textbf{MicroBooNE Signal Processing Steps and Impact on Data}}\\ 2D event displays of the U plane from MicroBooNE data run $3493$, event $41075$, zoomed in on a neutrino interaction candidate. The left-most image shows the raw digitized waveform in units of average baseline-subtracted analog-to-digital converter (ADC) scaled by $250$ per $3$ $\mu$s. The next panel shows the image after the noise removal algorithm, again in units of average baseline-subtracted ADC scaled by $250$ per $3$ $\mu$s. The last panel shows the image after processing with 2D deconvolution, also in units of electrons per $3$ $\mu$s. Adapted from \cite{Lauren_thesis}.}
+    \label{noise_deconv}
+\end{figure}
 
 \subsection{Hit Finding}
 
-Avinay's Thesis
+The first low level reconstruction done in the signal is the ``hit finding". In it, the wire waveforms are scanned and, in case its local maxima is above a given threshold, the signal is fit into a Gaussian curve and called a ``hit". The curve's height, area, and peak's time are recorded. The number of electrons associated detected by the wire is proportional to the electronic signal recorded in analog-to-digital converter (ADC) units \cite{avinay_thesis}.
+
+\subsection{Pandora}
+
+Pandora is the multi-algorithm pattern recognition framework used by MicroBooNE to identify and reconstruct tracks in the LArTPC. It takes in the hits information in each plane and combines them to build three 2D images. Assuming the drift (x) direction is common among them, Pandora combines the different views and forms a 3D reconstruction. Beyond that, Pandora uses pattern recognition to identify the topology of the events. In a first step, Pandora tags cosmic muons and removes the associated hits. Once we have a cosmic-muons-free hit collection, Pandora works identifying neutrino interaction vertices and reconstructing tracks and showers from it. You can see an example of a simulated neutrino interaction reconstructed using Pandora in \ref{pandora}. More information on the Pandora algorithms' use in MicroBooNE can be found in the paper \cite{pandora}.
+
+Although Pandora is optimized to reconstruct tracks, it is not developed to identify smaller, blip-like depositions characteristic of the MeV-scale neutrino interactions. In this work, we use a combination o Pandora and Blip Reconstruction algorithms to determine the $\mu$DAR neutrino candidates. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=110mm]{Figures/pandora.jpeg}
+    \caption[Simulated Neutrino Interaction Reconstructed Using Pandora]{{\textbf{Simulated Neutrino Interaction Reconstructed Using Pandora}}\\ Illustration of the Pandora recontruction of a simulated charged current $\nu_{\mu}$ interaction in MicroBooNE and its products. The interaction includes a muon, proton and charged pion in the visible final state \cite{pandora}.}
+    \label{pandora}
+\end{figure}
+
 
 \subsection{Blip Reconstruction}
 
@@ -206,7 +252,8 @@ Avinay's Thesis
 Wills presentations 
 
 \subsubsection{$\mu$DAR events Truth versus Reco Comparitions}
-\subsection{Pandora}
+
+
 
 \section{Data Analysis}
 \subsection{Cosmic-rays Background Assessment}
