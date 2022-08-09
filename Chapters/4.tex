@@ -203,11 +203,11 @@ Using the structure described above, we produced a NuMI Monte Carlo (MC) simulat
 
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
 
-To reconstruct the events in MicroBooNE, we count with a chain of reconstruction software that process the signal, carries it through a low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal noise filter, a deconvolution algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the Monte Carlo simulation.  
+To reconstruct the events in MicroBooNE, we count on a chain of reconstruction software that processes the signal, carries it through a low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal noise filter, a deconvolution algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the Monte Carlo simulation.  
 
 \subsection{Signal Processing}
 
-Once the detector captures the signals on represented on figure \ref{uboone_digital_signal}, we need to convert this raw signal into usable information. 
+Once the detector captures the signals presented in figure \ref{uboone_digital_signal}, we need to convert this raw signal into usable information. 
 Initially, the wires record any measured voltage as a function of time in the LArTPC during the readout window, which means it will include a lot of noise from various sources. Therefore, our first step is to pass the raw data through a noise filter algorithm. Deatils on it can be found on paper \cite{noise_filter}. You can see an example of the filters performance in figure \ref{noise_filter}. 
 
 \begin{figure}[h!]
@@ -217,7 +217,7 @@ Initially, the wires record any measured voltage as a function of time in the LA
     \label{noise_filter}
 \end{figure}
 
-After removing the excess noise, we need to extract the drift electron distribution from the TPC wire signals from the waveforms. The way to do this is to pass them through a 2D deconvolution procedure based on Fast Fourier Transform. This procedure suffers from low-frequency noise on the two induction planes due to the bipolar shape of the measured signals. We solve this by only considering regions of interest (ROI) on the waveforms just large enough to cover the signal. Anything that is not inside the ROI is discarded. The ROI procedure is also performed in the collection plane to reduce the data stored. The final result from this signal processing is a deconvolved wire waveform, in which a single individual element of charge signal takes the form of a Gaussian function. On figure \ref{noise_deconv} you can see the impact of each of those steps on the data. 
+After removing the excess noise, we need to extract the drift electron distribution from the TPC wire signals from the waveforms. The way to do this is to pass them through a 2D deconvolution procedure based on Fast Fourier Transform. This procedure suffers from low-frequency noise on the two induction planes due to the bipolar shape of the measured signals. We solve this by only considering regions of interest (ROI) on the waveforms just large enough to cover the signal. Anything that is not inside the ROI is discarded. The ROI procedure is also performed in the collection plane to reduce the data stored. The final result from this signal processing is a deconvolved wire waveform, in which a single individual element of charge signal takes the form of a Gaussian function. On figure \ref{noise_deconv} you can see the impact of each of those steps on the data. A more detailed description of MicroBooNE's signal processing is available at \cite{signal_proc}. 
 
 \begin{figure}[h!]
     \centering
@@ -228,13 +228,13 @@ After removing the excess noise, we need to extract the drift electron distribut
 
 \subsection{Hit Finding}
 
-The first low level reconstruction done in the signal is the ``hit finding". In it, the wire waveforms are scanned and, in case its local maxima is above a given threshold, the signal is fit into a Gaussian curve and called a ``hit". The curve's height, area, and peak's time are recorded. The number of electrons associated detected by the wire is proportional to the electronic signal recorded in analog-to-digital converter (ADC) units \cite{avinay_thesis}.
+The first low level reconstruction done in the signal is the ``hit finding". In it, the wire waveforms are scanned and, in case its local maxima is above a given threshold, the signal is fit into a Gaussian curve and called a ``hit". The curve's height, area, and peak time are recorded. The number of electrons detected by the wire is proportional to the area of the hit \cite{avinay_thesis}.
 
 \subsection{Pandora}
 
-Pandora is the multi-algorithm pattern recognition framework used by MicroBooNE to identify and reconstruct tracks in the LArTPC. It takes in the hits information in each plane and combines them to build three 2D images. Assuming the drift (x) direction is common among them, Pandora combines the different views and forms a 3D reconstruction. Beyond that, Pandora uses pattern recognition to identify the topology of the events. In a first step, Pandora tags cosmic muons and removes the associated hits. Once we have a cosmic-muons-free hit collection, Pandora works identifying neutrino interaction vertices and reconstructing tracks and showers from it. You can see an example of a simulated neutrino interaction reconstructed using Pandora in \ref{pandora}. More information on the Pandora algorithms' use in MicroBooNE can be found in the paper \cite{pandora}.
+Pandora is the multi-algorithm pattern recognition framework used by MicroBooNE to identify and reconstruct tracks in the LArTPC. It takes in the hits information in each plane and combines them to build three 2D images. Assuming the drift (x) direction is common among them, Pandora combines the different views and forms a 3D reconstruction. Beyond that, Pandora uses pattern recognition to identify the topology of the events. In a first step, Pandora tags cosmic muons and removes the associated hits. Once we have a cosmic-muons-free hit collection, Pandora works by identifying neutrino interaction vertices and reconstructing tracks and showers from it. You can see an example of a simulated neutrino interaction reconstructed using Pandora in \ref{pandora}. More information on the Pandora algorithms' use in MicroBooNE can be found in the paper \cite{pandora}.
 
-Although Pandora is optimized to reconstruct tracks, it is not developed to identify smaller, blip-like depositions characteristic of the MeV-scale neutrino interactions. In this work, we use a combination o Pandora and Blip Reconstruction algorithms to determine the $\mu$DAR neutrino candidates. 
+Although Pandora is optimized to reconstruct tracks, it is not developed to identify smaller, blip-like depositions characteristic of the MeV-scale neutrino interactions. In this work, we use a combination of Pandora and Blip Reconstruction algorithms to identify the $\mu$DAR neutrino candidates. 
 
 \begin{figure}[h!]
     \centering
@@ -245,11 +245,12 @@ Although Pandora is optimized to reconstruct tracks, it is not developed to iden
 
 
 \subsection{Blip Reconstruction}
+The Blip Reconstruction is a class of algorithms that identifies MeV-scale charge depositions in the LArTPC and reconstruct them into 3D clusters. Those depositions, due to teir nature, resemble point-like signals, to which we call ``blips". Their reconstruction is divided in two parts: the cluster finding and the plane matching. 
 
+On cluster finding, the algorithm works to isolate groups of hits in each of the planes. To do that, we veto 
 \subsubsection{Cluster Finding}
 \subsubsection{Plane Matching}
 
-Wills presentations 
 
 \subsubsection{$\mu$DAR events Truth versus Reco Comparitions}
 
