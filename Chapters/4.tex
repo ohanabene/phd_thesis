@@ -250,10 +250,11 @@ Although Pandora is optimized to reconstruct tracks, it is not developed to iden
     \label{pandora}
 \end{figure}
 
+\newpage
 \subsection{Blip Reconstruction}
-The Blip Reconstruction is a class of algorithms that identifies MeV-scale charge depositions in the LArTPC and reconstruct them into 3D clusters. Those depositions, due to teir nature, resemble point-like signals, to which we call ``blips". Their reconstruction is divided in two parts: the cluster finding and the plane matching. 
+The Blip Reconstruction is a class of algorithms that identifies MeV-scale charge depositions in the LArTPC and reconstructs them into 3D clusters. Due to their nature, those depositions resemble point-like signals, which we call ``blips". Their reconstruction is divided into two parts: the cluster finding and the plane matching. 
 
-On cluster finding, the algorithm works to isolate groups of hits in each of the planes. To do that, it veto hits in or near by a configurable distance a Pandora-identified track. Figure \ref{blip_track_veto} illustrates that procedure. Next, it cluster the left-over hits in each of the wire planes individually. 
+On cluster finding, the algorithm works to isolate groups of hits in each of the planes. It veto hits in or nearby a configurable distance of a Pandora-identified track. Figure \ref{blip_track_veto} illustrates that procedure. Next, it individually clusters the left-over hits in each wire plane. 
 
 \begin{figure}[h!]
     \centering
@@ -262,38 +263,38 @@ On cluster finding, the algorithm works to isolate groups of hits in each of the
     \label{blip_track_veto}
 \end{figure}
 
-Then, on plane matching, it finds matches between the clusters from different planes based on their overlaping in position and time (see figure \ref{plane-matching}). It is also required that the clusters are located in wires that cross. 
+Then, on plane matching, it finds matches between the clusters from different planes based on their overlapping in position and time (see figure \ref{plane-matching}). It is also required that the clusters are located in wires that cross. 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=110mm]{Figures/blip_cluster_match.png}
-    \caption[BlipReco - Plane Matching]{{\textbf{BlipReco - Plane Matching}}\\ The BlipReco algorithm finds matches between clusters in different planes by comparing their time and position overlaping. Adapted from \cite{will_CM_Aug}.}
+    \includegraphics[width=120mm]{Figures/blip_cluster_match.png}
+    \caption[BlipReco - Plane Matching]{{\textbf{BlipReco - Plane Matching}}\\ The BlipReco algorithm finds matches between clusters in different planes by comparing their time and position overlapping. Adapted from \cite{will_CM_Aug}.}
     \label{plane-matching}
 \end{figure}
 
- Then, the measured integrated charge in each plane must not differ by a configurable limit (the standard set in the code is $10^3$ e) \cite{will_CM_Aug}. In figure \ref{charge_match} you can see how the charge match is configured to only allow a certain deviation from the diagonal in a Charge in Cluster in Plane 1 versus Charge in a Cluster in Plane 2 plot.
+Then, the measured integrated charge in each plane must not differ by a configurable limit (the standard set in the code is $10^3$ e) \cite{will_CM_Aug}. In figure \ref{charge_match} you can see how the charge match is configured to only allow a certain deviation from the diagonal in a Charge in Cluster in Plane 1 versus Charge in a Cluster in Plane 2 plot.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=110mm]{Figures/blip_charge_match.png}
-    \caption[BlipReco - Cluster Charge Match]{{\textbf{BlipReco - Cluster Charge Match}}\\ In a last step, the BlipReco code tries to best match the integrated charge in clusters \cite{will_CM_Aug}.}
+    \includegraphics[width=100mm]{Figures/blip_charge_match.png}
+    \caption[BlipReco - Cluster Charge Match]{{\textbf{BlipReco - Cluster Charge Match}}\\ In a last step, the BlipReco code tries to best match the integrated charge in clusters \cite{will_CM_Aug}. The red arrow points to the margin of divergence from the diagonal, allowed to consider the charge in different clusters a match. }
     \label{charge_match}
 \end{figure}
 
-Lastly, the energy (E) is computed based on the charge (Q) collected following the expression:
+Lastly, it does the energy and position reconstruction. The energy (E) is computed based on the charge (Q) collected following the expression:
 \begin{equation}
-    E=Q\times Rˆ{-1} \times (24)
+    E=Q\times R^{-1} \times (24)
 \end{equation}
 
-where R is the electron recombination factor in MicroBooNE and $24$ eV is the average energy required to make ionize LAr \cite{lariat_calorimetry_lar}. 
+Where R is the electron recombination factor in MicroBooNE and $24$ eV is the average energy required to ionize LAr \cite{lariat_calorimetry_lar}. 
 
 For the position, the 3D position is reconstructed as shown in figure \ref{blip_position}. 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=110mm]{Figures/blip_reco_position.png}
+    \includegraphics[width=90mm]{Figures/blip_reco_position.png}
     \caption[BlipReco - Position Reconstruction]{{\textbf{BlipReco - Position Reconstruction}}\\ The reconstruction of the position is based on the overlaping position in which the wires cross \cite{will_CM_Aug}.}
-    \label{charge_match}
+    \label{blip_position}
 \end{figure}
 
 \subsubsection{$\mu$DAR events Truth versus Reco Comparitions}
