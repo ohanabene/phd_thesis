@@ -254,7 +254,7 @@ Although Pandora is optimized to reconstruct tracks, it is not developed to iden
 \subsection{Blip Reconstruction}
 The Blip Reconstruction is a class of algorithms that identifies MeV-scale charge depositions in the LArTPC and reconstructs them into 3D clusters. Due to their nature, those depositions resemble point-like signals, which we call ``blips". Their reconstruction is divided into two parts: the cluster finding and the plane matching. 
 
-On cluster finding, the algorithm works to isolate groups of hits in each of the planes. It veto hits in or nearby a configurable distance of a Pandora-identified track. Figure \ref{blip_track_veto} illustrates that procedure. Next, it individually clusters the left-over hits in each wire plane. 
+On cluster finding, the algorithm works to isolate groups of hits in each of the planes. It veto hits in or nearby a configurable distance of a Pandora-identified track. Figure \ref{blip_track_veto} illustrates that procedure. Next, it individually clusters the left-over hits in each wire plane. In our selection, we reject any tracks bigger than $25$ cm, as that is the limit length of a $53$ MeV electron track. We also set the veto to reject any blips $20$ cm away tracks bigger than $15$ cm. 
 
 \begin{figure}[h!]
     \centering
@@ -297,11 +297,174 @@ For the position, the 3D position is reconstructed as shown in figure \ref{blip_
     \label{blip_position}
 \end{figure}
 
-\subsubsection{$\mu$DAR events Truth versus Reco Comparitions}
-
 \section{Data Analysis}
-\subsection{Cosmic-rays Background Assessment}
-\subsection{NuMI GENIE $\nu_e$ Background Assessment}
-\subsection{NuMI GENIE $\nu_{\mu}$ Background Assessment}
-\subsection{Data}
+As established on the previous sessions, our $\mu$DAR $\nu_e$ candidate events are composed by a main electron, of energy between $20$ to $50$ MeV, and dexcitation photons around it. In figures \ref{signal_evd_1}, \ref{signal_evd_2}, and \ref{signal_evd_3} you can see the event display for a few simulated MARLEY signal events. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=200mm]{Figures/signal_evd_1.jpeg}
+    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. In the left one, the full event display. In the middle, its possible to see the main electron and the deexcitation photons, marked in purple. In the left, the main electron. The black shadows are the MC true information, whether the the blue-green-red are reconstructed information.}
+    \label{signal_evd_1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=200mm]{Figures/signal_evd_2.jpeg}
+    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. In the left one, the full event display. In the middle, its possible to see the main electron and the deexcitation photons, marked in purple. In the left, the main electron. The black shadows are the MC true information, whether the the blue-green-red are reconstructed information.}
+    \label{signal_evd_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=200mm]{Figures/signal_evd_3.jpeg}
+    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. In the left one, the full event display. In the middle, its possible to see the main electron and the deexcitation photons, marked in purple. In the left, the main electron. The black shadows are the MC true information, whether the the blue-green-red are reconstructed information.}
+    \label{signal_evd_3}
+\end{figure}
+
+As a first approach, this analysis focus on identifying the main electrons from the $\mu$DAR-LAr interaction. 
+There are a number of background events that can mimic our main electron candidates, such as particles from higher energy $\nu_e$s and $\nu_{\mu}$s, cosmic rays, and delta-rays and Bremsstrahlung. In figures \ref{bkg_evd_1},\ref{bkg_evd_2}, and \ref{bkg_evd_3}  you can see the event display of background events from GENIE MC and from data overlay cosmics. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=90mm]{Figures/shower_evd_1.png}
+    \caption[Event display of a background from the GENIE $\nu_{mu}$ simulated events in MicroBooNE.]{{\textbf{Event display of a background from the GENIE $\nu_{mu}$ simulated events in MicroBooNE.}}\\ }
+    \label{bkg_evd_1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/numu_evd.jpeg}
+    \caption[Event display of a background from the GENIE $\nu_{\mu}$ simulated event in MicroBooNE.]{{\textbf{Event display of a background from the GENIE $\nu_{\mu}$ simulated events in MicroBooNE.}}\\ }
+    \label{bkg_evd_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=90mm]{Figures/shower_evd_2.png}
+    \caption[Event display of a background from the GENIE $\nu_{\mu}$ simulated events in MicroBooNE.]{{\textbf{Event display of an electromagneticshower background found in the GENIE $\nu_{e}$ simulated events in MicroBooNE.}}\\ }
+    \label{bkg_evd_3}
+\end{figure}
+
+
+\subsubsection{$\mu$DAR events Truth versus Reco Comparitions}
+To evaluate the performance of the blip reconstruction algorithm in the $\mu$DAR $\nu_e$ events, it is conviniente to plot reco versus true for the variables evaluated. You can see in figures \ref{reco_vs_true_energy}, \ref{reco_vs_true_vertex_x}, \ref{reco_vs_true_vertex_y}, and \ref{reco_vs_true_vertex_z} how the blip reconstruction tool performes for energy and vertex X, Y and Z positions. 
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/energy_reco_vs_true.pdf}
+    \caption[Energy reconstruction performance in MARLEY $\nu_e$ main electron events]{{\textbf{Energy reconstruction performance in MARLEY $\nu_e$ main electrons}}\\ Reconstructed energy versus true energy for simulated MARLEY $\nu_e$ electrons. Although the majority of the population is located at the diagonal, there is a clear deficit in the reconstructed events for a non-negligible amount of the candidates.}
+    \label{reco_vs_true_energy}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/x_reco_vs_true.pdf}
+    \caption[Vertex X position reconstruction performance in MARLEY $\nu_e$ main electron events]{{\textbf{Vertex X position reconstruction performance in MARLEY $\nu_e$ main electron events}}\\ Reconstructed vertex X versus true vertex X for simulated MARLEY $\nu_e$ electrons. Almost all candidates fall into the diagonal of the canvas, indicating that the reconstruction tools perform well in this sample.}
+    \label{reco_vs_true_vertex_x}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/y_reco_vs_true.pdf}
+    \caption[Vertex Y position reconstruction performance in MARLEY $\nu_e$ main electron events]{{\textbf{Vertex Y position reconstruction performance in MARLEY $\nu_e$ main electron events}}\\ Reconstructed vertex Y versus true vertex Y for simulated MARLEY $\nu_e$ electrons. Almost all candidates fall into the diagonal of the canvas, indicating that the reconstruction tools perform well in this sample.}
+    \label{reco_vs_true_vertex_x}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/z_reco_vs_true.pdf}
+    \caption[Vertex Z position reconstruction performance in MARLEY $\nu_e$ main electron events]{{\textbf{Vertex Z position reconstruction performance in MARLEY $\nu_e$ main electron events}}\\ Reconstructed vertex Z versus true vertex Z for simulated MARLEY $\nu_e$ electrons. Almost all candidates fall into the diagonal of the canvas, indicating that the reconstruction tools perform well in this sample.}
+    \label{reco_vs_true_vertex_x}
+\end{figure}
+
+To thoroughly evaluate the background and make an informed choice on cuts for the selection, we used three different simulated MC (GENIE $\nu_{\mu}$, GENIE $\nu_{e}$, and MARLEY) and EXT NuMI data. In the GENIE $\nu_{\mu}$, we have simulated $\nu_{\mu}$ events overlayed with EXT unbiased data. In the GENIE $\nu_{e}$, we have simulated $\nu_{e}$ events overlayed with EXT unbiased data. In the MARLEY, we have simulated $\mu$DAR $\nu_e$ events overlayed with EXT unbiased data. We evaluate the background contribution of true simulated events and the overlayed cosmic rays for each MC sample. Each must be evaluated individually because of the different neutrino contributions in the beam and cosmic rays. The background is broken into its five contributions: from EXT cosmic rays, from GENIE $\nu_{e}$, from GENIE $\nu_{mu}$, from GENIE $\nu_{e}$ cosmic rays, and from GENIE $\nu_{mu}$ cosmic rays. 
+
+The first cut applied in the selection to reject background is the fiducial volume cut to reject blips in our selection. Blips closer to the corners of the detector are more likely to be from cosmic rays and therefore are rejected, as shown in figures \ref{vertex_X},\ref{vertex_Y}, and \ref{vertex_Z}. The reconstructed blip position corresponds to the middle of the track. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/vertex_X.pdf}
+    \caption[Reconstructed Blip X Position.]{{\textbf{Reconstructed Blip X Position.}}\\ Distribution of reconstructed blip X position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
+    \label{vertex_X}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/vertex_Y.pdf}
+    \caption[Reconstructed Blip Y Position.]{{\textbf{Reconstructed Blip Y Position.}}\\ Distribution of reconstructed blip Y position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
+    \label{vertex_Y}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/vertex_Z.pdf}
+    \caption[Reconstructed Blip Z Position.]{{\textbf{Reconstructed Blip Z Position.}}\\ Distribution of reconstructed blip Z position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
+    \label{vertex_Z}
+\end{figure}
+
+Next, we only accept blips with reconstructed energy, $20 <$ E$_{reco}$ $< 53$ MeV, bigger than $4$ cm, and that had a cluster match on all 3 planes of wires. The first two cuts are chosen based on the topology of the signal events, whether the last one is a data quality cut.
+The distribution of those cuts for simulated signal and background can be seen in figures \ref{blip_size}, \ref{blip_energy}, and \ref{blip_nplanes}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/blip_size.pdf}
+    \caption[Reconstructed Blip Size.]{{\textbf{Reconstructed Blip Size.}}\\ Distribution of reconstructed size for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The cuts applied are represented by the gray vertical lines.}
+    \label{blip_size}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/Energy_MC.pdf}
+    \caption[Reconstructed Energy.]{{\textbf{Reconstructed Energy.}}\\ Distribution of reconstructed energy for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The energy cut is represented by the vertical gray lines.}
+    \label{blip_energy}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/blip_n_planes.pdf}
+    \caption[Number of Planes Cluster-Matched.]{{\textbf{Number of Planes Cluster-Matched.}}\\ Distribution of number of planes cluster-matched for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. It is required that there is a cluster-match between all the three planes. The cut is represented by the vertical gray line.}
+    \label{blip_nplanes}
+\end{figure}
+
+In total, we are left with a total of $8776$ selected background events, POT normalized to the amount of POT in NuMI Run1 data, and $1$ selected signal events in MARLEY MC. Therefore, this work's selection purity computes to $0.011\%$. The the absolute numbers, the POT amounts in each sample, and the POT normalization can be found in \table{bkg}. In the MARLEY $\nu_{e}$ MC sample we have a total of $30631$ neutrinos interacting in the fiducial volume, and $2720$ truth-matched candidates were selected. Therefore, our selection efficiency is of $8.88\%$. 
+
+\begin{table}
+    \centering
+	\begin{tabular}{cccccc}
+		\hline
+		\textbf{Origin} & \textbf{Selected Events}	&	\textbf{POT in Sample}	&	\textbf{NuMI Run1 Beam On Data POT Limit} & \textbf{POT normalization Factor} & \textbf{Selected Events Data POT Normalized}\\
+		\toprule
+		MARLEY Signal & 2720 & 5.7437823 $\times 10^{23}$ & 2 $\times 10^{20}$ & 3.48 $\times 10^{-4}$ & 0.95 \\ 
+		MARLEY Cosmic Ray & 1933 & 5.7437823 $\times 10^{23}$ & 2 $\times 10^{20}$ & 3.48 $\times 10^{-4}$ & 0.67 \\
+		GENIE  $\nu_{\mu}$ Cosmic Ray &  2090  &  1.05669 $\times 10^{21}$  &  2 $\times 10^{20}$ &  1.89 $\times 10^{-1}$ & 1114.23 \\ 
+        GENIE  $\nu_{\mu}$ & 5887 & 1.05669 $\times 10^{21}$ & 2 $\times 10^{20}$ & 1.89 $\times 10^{-1}$ & 395.58 \\
+        GENIE  $\nu_{e}$ Cosmic Ray & 10471 & 8.11503 $\times 10^{22}$ & 2 $\times 10^{20}$ & 2.47$\times 10^{-3}$ & 25.81 \\
+        GENIE  $\nu_{e}$ & 13095 & 8.11503 $\times 10^{22}$ & 2 $\times 10^{20}$ & 2.47$\times 10^{-3}$ & 32.27 \\
+        EXT & 12586 & 9.19923274 $\times 10^{6}$ & 5.268051 $\times 10^{6}$ & 5.73 $\times 10^{-1}$ & 7207.52 \\
+		\hline
+	\end{tabular}
+	\caption[Selection Background Evaluation]{{\textbf{Selection Background Evaluation Broken by Origin}}}
+    \label{bkg}
+\end{table}
+
+\subsection{Data- Monte Carlo agreement}
+When looking at the MC-data agreement for electron energy and track size in figures \ref{} and \ref{}, we can see a very good agreement. This is due to the fact that this analysis is dominated by cosmic ray background.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/energy.pdf}
+    \caption[Blip Energy Distribution for Selected Data Candidates, Simulated Background, and EXT.]{{\textbf{Blip Energy Distribution for Selected Data Candidates, Simulated Background, and EXT.}}\\ Distribution of blip energy reconstruction for NuMI Run1 Beam ON data, GENIE Overlay $\nu_{\mu}$, GENIE Overlay $\nu_{e}$, and EXT. The contribution of each of the background is stacked.}
+    \label{blip_nplanes}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/size.pdf}
+    \caption[Blip Size Distribution for Selected Data Candidates, Simulated Background, and EXT.]{{\textbf{Blip Size Distribution for Selected Data Candidates, Simulated Background, and EXT.}}\\ Distribution of blip size reconstruction for NuMI Run1 Beam ON data, GENIE Overlay $\nu_{\mu}$, GENIE Overlay $\nu_{e}$, and EXT. The contribution of each of the background is stacked.}
+    \label{blip_nplanes}
+\end{figure}
+
+\subsection{Sensitivity to nuclear structure theoretical models}
+
 \section{Conclusion}
