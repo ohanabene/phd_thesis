@@ -1,6 +1,6 @@
 The only supernova neutrinos detected to date was the SN1987A, from a supernova that happened at the Large Magellanic Cloud. A small amount of electron neutrinos from the event were observed at Kamiokande-II ($12$ $\bar{\nu}_e$s), IMB ($8$ $\bar{\nu}_e$s), and Baksan ($5$ $\bar{\nu}_e$s). Despite the small dataset, a rich amount of analysis was published using the data, \cite{Kamiokande-II-PRL, Kamiokande-II-PRD, IMB, Baksan}. 
-On the occasion of a core-collapse supernova in our galaxy, measuring the flux of neutrinos and antineutrinos from all flavors will significantly enlighten the fields of astrophysics and neutrino physics. Therefore, one of DUNE's goals is to be prepared for such an event, as it is the most potent detector to measure the electron neutrinos signal from a supernova, \cite{dune_SAND}.
-In this chapter, I will explain the basics of supernovas and the neutrinos produced at them, why DUNE is particularly suitable to measure those neutrinos, and how using muos that decay at rest ($\mu$DARs) at the NuMI beam and interact in the MicroBooNE detector can help us improve neutrino-nucleus theoretical models and MeV-scale detection techniques in LArTPCs, which will be essential to accomplish the supernova detection in DUNE.
+ On the occasion of a core-collapse supernova in our galaxy, measuring the flux of neutrinos and antineutrinos from all flavors will significantly enlighten the fields of astrophysics and neutrino physics. Therefore, one of DUNE's goals is to be prepared for such an event, as it is the most potent detector to measure the electron neutrinos signal from a supernova, \cite{dune_SAND}.
+ In this chapter, I will explain the basics of supernovas and the neutrinos produced at them, why DUNE is particularly suitable to measure those neutrinos, and how using muos that decay at rest ($\mu$DARs) at the NuMI beam and interact in the MicroBooNE detector can help us improve neutrino-nucleus theoretical models and MeV-scale detection techniques in LArTPCs, which will be essential to accomplish the supernova detection in DUNE. 
 
 \section{Core-Collapse Supernova Neutrino Detection in DUNE}
 \subsubsection{Supernovas}
@@ -10,6 +10,8 @@ At the end of the life of a star that has $8-40$ solar masses, its body is made 
 \begin{equation}
     e^{-} + p \longrightarrow n + \nu_e
 \end{equation}
+
+\iffalse
 
 starts to happen more frequently, causing the pressure from electrons to lower even more and the star to collapse more rapidly. At the latest stages of the collapse, the density is such that even neutrinos get trapped in the core. Eventually, the pressure created by the nucleons degeneracy interrupts the collapse. The sudden stop of the collapse in the core causes a shock wave through the outer layers, and the star explodes. At the early stage of the shock wave, the density lowers, and the neutrinos manage to escape, creating an intense few-millisecond pulse called neutronization burst. 
 After the neutronization burst, outer layers of the star still falling innard manage to stall the shock wave briefly. This stage is called the accretion phase. We still don't understand why the shock wave regains energy enough to proceed. One hypothesis is that neutrino reactions produce sufficient heat for the thermal pressure to give continuity to the explosion. 
@@ -175,7 +177,7 @@ After that, Geant4 takes over again and simulates the interactions of the outgoi
 
 \section{$\mu$DAR Monte Carlo Simulation in MicroBooNE}
 
-Using the structure described above, we produced a NuMI Monte Carlo (MC) simulation with a total of $5.74378 \times 10^{23}$ POT. For that POT amount, we have with a total of $131.687$ neutrinos interacting near MicroBooNE, being $50.605$ inside the fiducial volume. The values for the fiducial volume dimensions used in this analysis can be seen in table \ref{fiducial}. The energy distribution of the simulated neutrinos and the electrons produced after the interaction, and the interaction vertex x, y and z positions can be seen in figures \ref{sim_energy_dist_figures} and \ref{sim_vertex_dist_figures}, respectively.  
+Using the structure described above, we produced a NuMI Monte Carlo (MC) simulation with a total of $5.74378 \times 10^{23}$ POT. For that POT amount, we have with a total of $131,687$ neutrinos interacting near MicroBooNE, being $30,631$ inside the fiducial volume. The values for the fiducial volume dimensions used in this analysis can be seen in table \ref{fiducial}. The energy distribution of the simulated neutrinos and the electrons produced after the interaction, and the interaction vertex x, y and z positions can be seen in figures \ref{sim_energy_dist_figures} and \ref{sim_vertex_dist_figures}, respectively.  
 
 \begin{table}
 	\begin{center}
@@ -250,6 +252,7 @@ Although Pandora is optimized to reconstruct tracks, it is not developed to iden
     \label{pandora}
 \end{figure}
 
+\newpage
 \subsection{Blip Reconstruction}
 The Blip Reconstruction is a class of algorithms that identifies MeV-scale charge depositions in the LArTPC and reconstructs them into 3D clusters. Due to their nature, those depositions resemble point-like signals, which we call ``blips". Their reconstruction is divided into two parts: the cluster finding and the plane matching. 
 
@@ -297,62 +300,62 @@ For the position, the 3D position is reconstructed as shown in figure \ref{blip_
 \end{figure}
 
 \section{Data Analysis}
-As established on the previous sessions, our $\mu$DAR $\nu_e$ candidate events are composed by a main electron, of energy between $20$ to $50$ MeV, and dexcitation photons around it. In figures \ref{signal_evd_1}, \ref{signal_evd_2}, and \ref{signal_evd_3} you can see the event display for a few simulated MARLEY signal events. 
+As established in the previous sessions, our $\mu$DAR $\nu_e$ candidate events are composed of the main electron, energy between $20$ to $50$ MeV, and deexcitation photons around it. In figures \ref{signal_evd_1}, \ref{signal_evd_2}, and \ref{signal_evd_3} you can see the event display for a few simulated MARLEY signal events. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=200mm]{Figures/signal_evd_1.jpeg}
-    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. In the left one, the full event display. In the middle, its possible to see the main electron and the deexcitation photons, marked in purple. In the left, the main electron. The black shadows are the MC true information, whether the the blue-green-red are reconstructed information.}
+    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. On the left one is the full event display. In the middle, it is possible to see the main electron and the deexcitation photons, marked in purple. On the right is the main electron. The black shadows are the MC true information, whether the blue-green-red are reconstructed information. This event is a $29.716$ MeV electron, and blip reconstruction reconstructed the energy as $28.448$ MeV.}
     \label{signal_evd_1}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=200mm]{Figures/signal_evd_2.jpeg}
-    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. In the left one, the full event display. In the middle, its possible to see the main electron and the deexcitation photons, marked in purple. In the left, the main electron. The black shadows are the MC true information, whether the the blue-green-red are reconstructed information.}
-    \label{signal_evd_2}
+    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. On the left one is the full event display. In the middle, it is possible to see the main electron and the deexcitation photons, marked in purple. On the right is the main electron. The black shadows are the MC true information, whether the blue-green-red are reconstructed information. This event is a $30.599$ MeV electron, and blip reconstruction reconstructed the energy as $27.107$ MeV.}
+ \label{signal_evd_2}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=200mm]{Figures/signal_evd_3.jpeg}
-    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. In the left one, the full event display. In the middle, its possible to see the main electron and the deexcitation photons, marked in purple. In the left, the main electron. The black shadows are the MC true information, whether the the blue-green-red are reconstructed information.}
-    \label{signal_evd_3}
+    \caption[Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE]{{\textbf{Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE}}\\ Event display of MARLEY simulated $\mu$DAR $\nu_e$s in MicroBooNE. From left to right, frames of the same event zoomed in. On the left one is the full event display. In the middle, it is possible to see the main electron and the deexcitation photons, marked in purple. On the right is the main electron. The black shadows are the MC true information, whether the blue-green-red are reconstructed information. This event is a $37.453$ MeV electron, and blip reconstruction reconstructed the energy as $30.670$ MeV.}
+ \label{signal_evd_3}
 \end{figure}
 
 As a first approach, this analysis focus on identifying the main electrons from the $\mu$DAR-LAr interaction. 
-There are a number of background events that can mimic our main electron candidates, such as particles from higher energy $\nu_e$s and $\nu_{\mu}$s, cosmic rays, and delta-rays and Bremsstrahlung. In figures \ref{bkg_evd_1},\ref{bkg_evd_2}, and \ref{bkg_evd_3}  you can see the event display of background events from GENIE MC and from data overlay cosmics. 
+Several background events can mimic our main electron candidates, such as particles from higher energy $\nu_e$s and $\nu_{\mu}$s, cosmic rays, delta-rays, and Bremsstrahlung. In figures \ref{bkg_evd_1},\ref{bkg_evd_2}, and \ref{bkg_evd_3} you can see the event display of background events from GENIE MC and from data overlay cosmic rays.
+
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=90mm]{Figures/shower_evd_1.png}
-    \caption[Event display of a background from the GENIE $\nu_{mu}$ simulated events in MicroBooNE.]{{\textbf{Event display of a background from the GENIE $\nu_{mu}$ simulated events in MicroBooNE.}}\\ this is a caption}
+    \caption[Event display of a background from the GENIE $\nu_{mu}$ simulated events in MicroBooNE.]{{\textbf{Event display of a background from the GENIE $\nu_{e}$ simulated events in MicroBooNE.}}\\ caption }
     \label{bkg_evd_1}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/numu_evd.jpeg}
-    \caption[Event display of a background from the GENIE $\nu_{\mu}$ simulated event in MicroBooNE.]{{\textbf{Event display of a background from the GENIE $\nu_{\mu}$ simulated events in MicroBooNE.}}\\ this is a caption}
+    \caption[Event display of a background from the GENIE $\nu_{\mu}$ simulated event in MicroBooNE.]{{\textbf{Event display of a background from the GENIE $\nu_{\mu}$ simulated events in MicroBooNE.}}\\ caption }
     \label{bkg_evd_2}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=90mm]{Figures/shower_evd_2.png}
-    \caption[Event display of a background from the GENIE $\nu_{\mu}$ simulated events in MicroBooNE.]{{\textbf{Event display of an electromagneticshower background found in the GENIE $\nu_{e}$ simulated events in MicroBooNE.}}\\ this is a caption}
+    \caption[Event display of a background from the GENIE $\nu_{\mu}$ simulated events in MicroBooNE.]{{\textbf{Event display of an electromagneticshower background found in the GENIE $\nu_{e}$ simulated events in MicroBooNE.}}\\ caption }
     \label{bkg_evd_3}
 \end{figure}
 
 
 \subsubsection{$\mu$DAR events Truth versus Reco Comparitions}
-
-To evaluate the performance of the blip reconstruction algorithm in the $\mu$DAR $\nu_e$ events, it is conviniente to plot reco versus true for the variables evaluated. You can see in figures \ref{reco_vs_true_energy}, \ref{reco_vs_true_vertex_x}, \ref{reco_vs_true_vertex_y}, and \ref{reco_vs_true_vertex_z} how the blip reconstruction tool performes for energy and vertex X, Y and Z positions.
+To evaluate the performance of the blip reconstruction algorithm in the $\mu$DAR $\nu_e$ events, it is helpful to plot reconstructed versus true for the variables evaluated. You can see in figures \ref{reco_vs_true_energy}, \ref{reco_vs_true_vertex_x}, \ref{reco_vs_true_vertex_y}, and \ref{reco_vs_true_vertex_z} how the blip reconstruction tool performs for energy and vertex X, Y and Z positions. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/energy_reco_vs_true.pdf}
-    \caption[Energy reconstruction performance in MARLEY $\nu_e$ main electron events]{{\textbf{Energy reconstruction performance in MARLEY $\nu_e$ main electrons}}\\ Reconstructed energy versus true energy for simulated MARLEY $\nu_e$ electrons. Although the majority of the population is located at the diagonal, there is a clear deficit in the reconstructed events for a non-negligible amount of the candidates.}
+    \caption[Energy reconstruction performance in MARLEY $\nu_e$ main electron events]{{\textbf{Energy reconstruction performance in MARLEY $\nu_e$ main electrons}}\\ Reconstructed energy versus true energy for simulated MARLEY $\nu_e$ electrons. Although most of the population is located at the diagonal, there is a clear energy deficit in the reconstructed portion for a non-negligible number of candidates.}
     \label{reco_vs_true_energy}
 \end{figure}
 
@@ -402,31 +405,31 @@ The first cut applied in the selection to reject background is the fiducial volu
     \label{vertex_Z}
 \end{figure}
 
-Next, we only accept blips with reconstructed energy, $20 <$ E$_{reco}$ $< 53$ MeV, bigger than $4$ cm, and that had a cluster match on all 3 planes of wires. The first two cuts are chosen based on the topology of the signal events, whether the last one is a data quality cut.
+Next, we only accept blips with reconstructed energy, $20 < E_\text{reco} < 53$ MeV, larger than $4$ cm, and that had a cluster match on all three planes of wires. The first two cuts are chosen based on the topology of the signal events, whether the last one is a data quality cut.
 The distribution of those cuts for simulated signal and background can be seen in figures \ref{blip_size}, \ref{blip_energy}, and \ref{blip_nplanes}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/blip_size.pdf}
-    \caption[Reconstructed Blip Size.]{{\textbf{Reconstructed Blip Size.}}\\ Distribution of reconstructed size for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The cuts applied are represented by the gray vertical lines.}
-    \label{blip_size}
+    \caption[Reconstructed Blip Size.]{{\textbf{Reconstructed Blip Size.}}\\ Distribution of reconstructed size for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The gray vertical lines represent the cuts applied.}
+ \label{blip_size}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/Energy_MC.pdf}
-    \caption[Reconstructed Energy.]{{\textbf{Reconstructed Energy.}}\\ Distribution of reconstructed energy for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The energy cut is represented by the vertical gray lines.}
-    \label{blip_energy}
+    \caption[Reconstructed Energy.]{{\textbf{Reconstructed Energy.}}\\ Distribution of reconstructed energy for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines represent the energy cut.}
+ \label{blip_energy}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/blip_n_planes.pdf}
-    \caption[Number of Planes Cluster-Matched.]{{\textbf{Number of Planes Cluster-Matched.}}\\ Distribution of number of planes cluster-matched for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. It is required that there is a cluster-match between all the three planes. The cut is represented by the vertical gray line.}
-    \label{blip_nplanes}
+    \caption[Number of Planes Cluster-Matched.]{{\textbf{Number of Planes Cluster-Matched.}}\\ Distribution of the number of planes cluster-matched for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$, and Overlay GENIE $\nu_{e}$. It is required that there is a cluster match between all three planes. The vertical gray line represents the cut.}
+ \label{blip_nplanes}
 \end{figure}
 
-In total, we are left with a total of 8776 selected background events, POT normalized to the amount of POT in NuMI Run1 data, and 1 selected signal events in MARLEY MC. Therefore, this work's selection purity computes to 0.011\%. The absolute numbers, the POT amounts in each sample, and the POT normalization can be found in \ref{bkg}. In the MARLEY $\nu_{e}$ MC sample we have a total of 30631 neutrinos interacting in the fiducial volume, and 2720 truth-matched candidates were selected. Therefore, our selection efficiency is of 8.88\%.
+In total, we are left with $8,776$ selected background events, POT normalized to the amount of POT in NuMI Run1 data, and $1$ selected signal events in MARLEY MC. Therefore, this work's selection purity computes $0.011\%$. The absolute numbers for blip candidates for each sample, their POT amounts, and the POT normalization to data POT can be seen in \ref{bkg}. In the MARLEY $\nu_{e}$ MC sample, we have a total of $30,631$ neutrinos interacting in the fiducial volume, and $2,720$ truth-matched candidates were selected. Therefore, our selection efficiency is $8.88\%$.  
 
 \begin{table}
     \centering
@@ -448,22 +451,39 @@ In total, we are left with a total of 8776 selected background events, POT norma
 \end{table}
 
 \subsection{Data- Monte Carlo agreement}
-When looking at the MC-data agreement for electron energy and track size in figures \ref{} and \ref{}, we can see a very good agreement. This is due to the fact that this analysis is dominated by cosmic ray background.
+When looking at the MC-data agreement for electron energy and track size in figures \ref{data_mc_energy} and \ref{data_mc_size}, we can see a very good agreement. This is because this analysis is dominated by cosmic ray background.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/energy.pdf}
-    \caption[Blip Energy Distribution for Selected Data Candidates, Simulated Background, and EXT.]{{\textbf{Blip Energy Distribution for Selected Data Candidates, Simulated Background, and EXT.}}\\ Distribution of blip energy reconstruction for NuMI Run1 Beam ON data, GENIE Overlay $\nu_{\mu}$, GENIE Overlay $\nu_{e}$, and EXT. The contribution of each of the background is stacked.}
-    \label{blip_nplanes_data}
+    \caption[Blip Energy Distribution for Selected Data Candidates, Simulated Background, and EXT.]{{\textbf{Blip Energy Distribution for Selected Data Candidates, Simulated Background, and EXT.}}\\ Distribution of blip energy reconstruction for NuMI Run1 Beam ON data, GENIE Overlay $\nu_{\mu}$, GENIE Overlay $\nu_{e}$, and EXT. The contribution of each of the backgrounds is stacked.}
+    \label{data_mc_energy}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/size.pdf}
-    \caption[Blip Size Distribution for Selected Data Candidates, Simulated Background, and EXT.]{{\textbf{Blip Size Distribution for Selected Data Candidates, Simulated Background, and EXT.}}\\ Distribution of blip size reconstruction for NuMI Run1 Beam ON data, GENIE Overlay $\nu_{\mu}$, GENIE Overlay $\nu_{e}$, and EXT. The contribution of each of the background is stacked.}
-    \label{blip_size_data}
+    \caption[Blip Size Distribution for Selected Data Candidates, Simulated Background, and EXT.]{{\textbf{Blip Size Distribution for Selected Data Candidates, Simulated Background, and EXT.}}\\ Distribution of blip size reconstruction for NuMI Run1 Beam ON data, GENIE Overlay $\nu_{\mu}$, GENIE Overlay $\nu_{e}$, and EXT. The contribution of each of the backgrounds is stacked.}
+    \label{data_mc_size}
 \end{figure}
 
 \subsection{Sensitivity to nuclear structure theoretical models}
+By using the BPULE program, which you can find at \cite{BPULE}, we are able to calculate the upper limit for $mu$DAR $\nu_e$-LAr cross-section. Assuming a confidence level of $90\%$, with inclusion of systematic uncertainties in background expectation and signal efficiency. 
 
 \section{Conclusion}
+
+
+Looking forward, there are several approaches that can be taken to greatly improve this analysis and I will list them below. 
+\begin{enumerate}
+    \item The blip reconstruction tools are under development and improving fast, but it was used in this work in one of its first versions. Therefore, it is a matter of time until the blip reconstruction group can turn the blip identification and reconstruction more efficiently. Blip reconstruction could also benefit from a complete merge with the Pandora reconstruction tools if one would like to explore other methods of data selection and background identification.
+
+    \item The analysis is dominated by cosmic ray background. MicroBooNE has a Cosmic Ray Tagger (CRT), composed of scintillator paddles on the top and bottom of the detector that could be used to identify cosmic rays entering the detector. The CRT data is currently not validated and processed in MicroBooNE, and this analysis could greatly benefit from this particular information in case the data becomes available.  
+    
+    \item The other two background components in this analysis are activity from interactions of $\nu_{\mu}$s and $\nu_{e}$s from the beam. Muons lifetime is $2.2$ $\mu s$, which means that we could reprocess the data through the steps presented in session $4.4$ to acquire information a few microseconds after the beam window, in which case the beam background would be non-existent for that portion of data. Many analyzers in MicroBooNE are interested in this data portion, especially due to its potential for exotic physics. However, this process would be too resources consuming, and the best approach to it has been discussed in the collaboration.  
+     
+    \item The electron energy reconstruction currently assumes a flat energy deposition of $2$ MeV/cm. A more accurate energy deposition measurement could be obtained by using the ESTAR program. The ESTAR is a program that "calculates stopping power, density effect parameters, range, and radiation yield tables for electrons in various materials" \cite{ESTAR}. It has been used in LArTPCs before in Argoneut and in MicroBooNE, but it is not yet deployed in the blip reconstruction tools used in this analysis \cite{argoneut_mev}, \cite{microboone_mev}. 
+    
+    \item This analysis could also benefit from lowering the hit threshold requirements on the hit finder tools. This is beeing explored by Christopher Hilgenberg in MicroBooNE. 
+\end{enumerate}
+
+\fi
