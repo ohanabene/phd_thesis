@@ -1,4 +1,16 @@
-\section{The SBND Detector}
-\section{APA Quality Assurance (QA) and Quality Control (QC) Tests}
-\section{APA Installation Procedures}
-\section{Status}
+\section{Conclusion}
+This work represents the first attempt to measure MeV-scale neutrino interactions in a LArTPC and extract a cross-section. Those measurements would be invaluable to the MeV-scale programs, nuclear physics models, and Supernova detection programs. 
+However, the results were dominated by cosmic ray backgrounds and beam backgrounds. 
+
+Looking  forward, several approaches can be taken to improve this analysis greatly, and I will list them below. 
+\begin{enumerate}
+ \item The blip reconstruction tools are under development and improving fast, but it was used in this work in one of its first versions. Therefore, it is a matter of time until the blip reconstruction group can turn the blip identification and reconstruction more efficiently. Blip reconstruction could also benefit from a complete merge with the Pandora reconstruction tools if one would like to explore other methods of data selection and background identification.
+
+ \item The analysis is dominated by cosmic ray background. MicroBooNE has a Cosmic Ray Tagger (CRT), composed of scintillator paddles on the top and bottom of the detector that could be used to identify cosmic rays entering the detector. The CRT data is currently being validated and processed in MicroBooNE, and soon it will be available and this analysis can benefit from it. 
+ 
+ \item The other two background components in this analysis are activity from interactions of $\nu_{\mu}$s and $\nu_{e}$s from the beam. Muons lifetime is $2.2$ $\mu s$, which means that we could reprocess the data through the steps presented in session $4.4$ to acquire information a few microseconds after the beam window, in which case the beam background would be non-existent for that portion of data. The impacts of it in the analysis is uncertain, and the resources cost of it would be significant, therefore more discussions on it is needed. 
+ 
+ \item The electron energy reconstruction currently assumes a flat energy deposition of $2$ MeV/cm. A more accurate energy deposition measurement could be obtained by using the ESTAR program. The ESTAR is a program that "calculates stopping power, density effect parameters, range, and radiation yield tables for electrons in various materials" \cite{ESTAR}. It has been used in LArTPCs before in ArgoNeut and MicroBooNE, but it is not yet deployed in the blip reconstruction tools used in this analysis \cite{argoneut_mev}, \cite{microboone_mev}. 
+ 
+ \item This analysis could also benefit from lowering the hit threshold requirements on the hit finder tools. This is beeing explored by Christopher Hilgenberg in MicroBooNE. 
+\end{enumerate}
