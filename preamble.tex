@@ -131,6 +131,7 @@
 \newtoks\dedicatoria
 \newtoks\epigrafe
 \newtoks\autordaepigrafe
+\newtoks\agradecimentoingles
 \newtoks\agradecimento
 \newtoks\resumo
 \newtoks\abstract
@@ -289,8 +290,17 @@
 %}
 
 
-\newcommand{\notaagradecimento}{\chapter*{Acknowledgements}
+\newcommand{\notaagradecimentoingles}{\chapter*{Acknowledgements}
   \addcontentsline{toc}{chapter}{\protect\numberline{}Acknowledgements}
+  \pagenumbering{roman}
+  \setcounter{page}{9}
+  \the\agradecimentoingles
+  \vspace*{\fill}
+  \verso
+}
+
+\newcommand{\notaagradecimento}{\chapter*{Agradecimentos}
+  \addcontentsline{toc}{chapter}{\protect\numberline{}Agradecimentos}
   \pagenumbering{roman}
   \setcounter{page}{9}
   \the\agradecimento
@@ -302,12 +312,6 @@
   \addcontentsline{toc}{chapter}{\protect\numberline{}Abstract}
   \singlespacing
   \the\abstract
-  \vspace*{\fill}
-  \onehalfspacing
-  \chapter*{Resumo}
-  \addcontentsline{toc}{chapter}{\protect\numberline{}Resumo}
-  \singlespacing 
-  \the\resumo
   \vspace*{\fill}
   \onehalfspacing
   \verso
