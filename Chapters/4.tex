@@ -1,17 +1,16 @@
-The only supernova neutrinos detected to date was the SN1987A, from a supernova that happened at the Large Magellanic Cloud. A small amount of electron neutrinos from the event were observed at Kamiokande-II ($12$ $\bar{\nu}_e$s), IMB ($8$ $\bar{\nu}_e$s), and Baksan ($5$ $\bar{\nu}_e$s). Despite the small dataset, a rich amount of analysis was published using the data, \cite{Kamiokande-II-PRL, Kamiokande-II-PRD, IMB, Baksan}. 
- On the occasion of a core-collapse supernova in our galaxy, measuring the flux of neutrinos and antineutrinos from all flavors will significantly enlighten the fields of astrophysics and neutrino physics. Therefore, one of DUNE's goals is to be prepared for such an event, as it is the most potent detector to measure the electron neutrinos signal from a supernova, \cite{dune_SAND}.
- In this chapter, I will explain the basics of supernovas and the neutrinos produced at them, why DUNE is particularly suitable to measure those neutrinos, and how using muos that decay at rest ($\mu$DARs) at the NuMI beam and interact in the MicroBooNE detector can help us improve neutrino-nucleus theoretical models and MeV-scale detection techniques in LArTPCs, which will be essential to accomplish the supernova detection in DUNE. 
+The only supernova neutrinos detected to date were those from SN1987A, a supernova that occurred in the Large Magellanic Cloud. A small amount of electron neutrinos from the event were observed at Kamiokande-II ($12$ $\bar{\nu}_e$s), IMB ($8$ $\bar{\nu}_e$s), and Baksan ($5$ $\bar{\nu}_e$s). Despite the small dataset, a rich amount of analysis was published using the data\cite{Kamiokande-II-PRL, Kamiokande-II-PRD, IMB, Baksan}. 
+ On the occasion of a core-collapse supernova in our galaxy, measuring the flux of neutrinos and antineutrinos from all flavors will significantly enlighten the fields of astrophysics and neutrino physics. Therefore, one of DUNE's goals is to be prepared for such an event, as it is the most potent detector to measure the electron neutrinos signal from a supernova\cite{dune_SAND}.
+ In this chapter, I will explain the basics of supernovas and the neutrino produced at them, why DUNE is particularly suitable to measure those neutrinos, and how using muons that decay at rest ($\mu$DARs) at the NuMI beam and interact in the MicroBooNE detector can help us improve neutrino-nucleus theoretical models and MeV-scale detection techniques in LArTPCs, which will be essential to accomplish the supernova detection in DUNE. 
 
 \section{Core-Collapse Supernova Neutrino Detection in DUNE}
 \subsubsection{Supernovas}
 Supernova is the name given to the explosive chain of events that happens during the death of some stars. Mainly, core-collapse supernovas produce a massive number of neutrinos and antineutrinos whose spectrum, if measured, can inform the characteristics of the explosion. 
-At the end of the life of a star that has $8-40$ solar masses, its body is made of concentric shells that were formed at each of its previous burning phases, them being: hydrogen, helium, carbon, neon, oxygen, silicon, enveloping a core of nickel and iron. During its life, the stability of the star is a balance between the thermal pressure produced in the fusion process, which pulls everything in the outer direction, and its gravity pulling inward. When the mass of the iron core reaches $1.4$ solar masses, the pressure is not enough to balance the gravity, and the core starts to be compressed by its own weight. Temperature and density in the core rise and the reaction
+At the end of the life of a star that has $8-40$ solar masses, its body is made of concentric shells that were formed at each of its previous burning phases, them being: hydrogen, helium, carbon, neon, oxygen, silicon, enveloping a core of nickel and iron. During its life, the stability of the star is a balance between the thermal pressure produced in the fusion process, which pushes everything in the outer direction, and its gravity pulling inward. When the mass of the iron core reaches $1.4$ solar masses, the pressure is not enough to balance the gravity, and the core starts to be compressed by its own weight. Temperature and density in the core rise and the reaction
 
 \begin{equation}
     e^{-} + p \longrightarrow n + \nu_e
 \end{equation}
-
-starts to happen more frequently, causing the pressure from electrons to lower even more and the star to collapse more rapidly. At the latest stages of the collapse, the density is such that even neutrinos get trapped in the core. Eventually, the pressure created by the nucleons degeneracy interrupts the collapse. The sudden stop of the collapse in the core causes a shock wave through the outer layers, and the star explodes. At the early stage of the shock wave, the density lowers, and the neutrinos manage to escape, creating an intense few-millisecond pulse called neutronization burst. 
+starts to happen more frequently, causing the pressure from electrons to lower even more and the star to collapse more rapidly. At the latest stages of the collapse, the density is such that even neutrinos get trapped in the core. Eventually, the pressure created by the nucleon degeneracy interrupts the collapse. The sudden stop of the collapse in the core causes a shock wave through the outer layers, and the star explodes. At the early stage of the shock wave, the density lowers, and the neutrinos manage to escape, creating an intense few-millisecond pulse called neutronization burst. 
 After the neutronization burst, outer layers of the star still falling innard manage to stall the shock wave briefly. This stage is called the accretion phase. We still don't understand why the shock wave regains energy enough to proceed. One hypothesis is that neutrino reactions produce sufficient heat for the thermal pressure to give continuity to the explosion. 
 Next, in the cooling phase, the star's energy is given away in many different processes that create neutrinos and antineutrinos of various flavors. A few of them are:
 
@@ -27,8 +26,16 @@ Next, in the cooling phase, the star's energy is given away in many different pr
     & \text{{\color{gray}nuclear de-excitation by neutrino pair production:}} 
     && ^{Z}_{A}X^{*} \longrightarrow ^{Z}_{A}X + \nu + \bar{\nu}
 \end{align}
+Those processes produce neutrinos that are in the MeV-scale. In figure \ref{dune_supernova_nu_energy} you can see the energy spectrum of the expected neutrinos and antineutrinos from a supernova. 
 
-Given the wide variety of processes, measuring the flux of neutrinos and antineutrinos from all flavors is fundamental to help us better understand aspects of the supernova and what role the processes during the explosion play in its development, \cite{Gardiner_thesis}. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=120mm]{Figures/supernova_nu_energy.png}
+    \caption[Predicted Supernova Neutrino Energy Distribution]{{\textbf{Predicted Supernova Neutrino Energy Distribution}}\\ Supernova neutrino spectrum compiled during 10 seconds, assuming the Gava-Kneller-Volpe-McLaughlin model \cite{Supernova_Neutrino_Detection}.}
+    \label{dune_supernova_nu_energy}
+\end{figure}
+
+Given the wide variety of processes, measuring the flux of neutrinos and antineutrinos from all flavors is fundamental to help us better understand aspects of the supernova and what role the processes active during the explosion play in its development\cite{Gardiner_thesis}. 
 
 \subsubsection{Supernova detection in DUNE}
 
@@ -42,23 +49,22 @@ Luckily, DUNE's active material is liquid argon, which is mainly sensitive to el
     \label{nu_scatter_eq}
 \end{equation}
  
-An example of a contribution to neutrino physics that a supernova neutrino detection could make in DUNE is to shine light into the mass ordering puzzle. Figure \ref{dune_supernova} shows how the time distribution of the incoming flux of the neutrinos of a $10$ kpc supernova in DUNE could depend on the mass hierarchy. In the case of inverted hierarchy, we should see an early excess of events from the neutronization phase, whether, in the case of normal hierarchy, we should see the absence of such events. The results from figure \ref{dune_supernova} are made assuming a model describer in reference \cite{dune_supernova_model}, but those results are assumed to be fairly model-independent \cite{kate_scholberg}. 
+An example of a contribution to neutrino physics that a supernova neutrino detection could make in DUNE is to shine light into the mass ordering puzzle. Figure \ref{dune_supernova} shows how the time distribution of the incoming flux of the neutrinos of a $10$ kpc supernova in DUNE could depend on the mass hierarchy. In the case of inverted hierarchy, we should see an early excess of events from the neutronization phase, whereas, in the case of normal hierarchy, we should see the absence of such events. The results from figure \ref{dune_supernova} are made assuming a model described in reference \cite{dune_supernova_model}, but those results are assumed to be fairly model-independent \cite{kate_scholberg}. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=150mm]{Figures/dune_supernova.jpeg}
-    \caption[Predicted event time distribution for the detection of supernova neutrinos in a DUNE-like $40$ kt LArTPC]{{\textbf{Predicted event time distribution for the detection of supernova neutrinos in a DUNE-like 40 kt LArTPC}}\\ Predicted event time distribution for the detection of a $10$ kpc supernova neutrinos in a DUNE-like 40 kt LArTPC for each of the supernova stages. The blue curve assumes no oscillations, the green and the red curves assume oscillations for inverted and normal mass hierarchy, respectively \cite{kate_scholberg}.}Furthermore, being able to measure the flux of both neutrinos and antineutrinos is fundamental to further understanding exotic supernova processes \cite{Friedland}.
+    \caption[Predicted event time distribution for the detection of supernova neutrinos in a DUNE-like $40$ kt LArTPC]{{\textbf{Predicted event time distribution for the detection of supernova neutrinos in a DUNE-like 40 kt LArTPC}}\\ Predicted event time distribution for the detection of a $10$ kpc supernova neutrinos in a DUNE-like 40 kt LArTPC for each of the supernova stages. The blue curve assumes no oscillations, the green and the red curves assume oscillations for inverted and normal mass hierarchy, respectively \cite{kate_scholberg}.} \cite{Friedland}.
     \label{dune_supernova}
 \end{figure}
-
 Furthermore, being able to measure the flux of both neutrinos and antineutrinos is fundamental to further understanding exotic supernova processes \cite{Friedland}. 
 
 \section{$\mu$ Decay At Rest $\nu_e$ Charged Current interactions in MicroBooNE}
 
 \subsection{$\mu$ Decay At Rest in MicroBooNE}
-As promising as the DUNE supernova neutrino program is, we currently lack an understanding of the MeV-scale neutrinos and LAr nucleus interactions, LArTPC reconstruction capabilities, and event identification at this energy range. 
+As promising as the DUNE supernova neutrino program is, we currently lack an understanding of the MeV-scale neutrinos and argon nucleus interactions, LArTPC reconstruction capabilities, and event identification at this energy range. 
 
-As mentioned before, MicroBooNE is exposed to the BNB and NuMI beamlines. Both beamlines produce a copious amount of antimuons that will, when decaying at rest, produce a muon antineutrino, an electron neutrino, and a positron, as shown in equation \ref{mudar_decay_eq}. The energy spectrum of the electron neutrinos from this decay is well-known and can be seen in picture \ref{mudar_nue_energy}. In figures \ref{numi_nue_flux} and \ref{numi_nu_flux} you can see the NuMI flux prediction of $\nu_e$s in MicroBoone by parents and the NuMI flux prediction in MicroBooNE of all neutrinos, respectively. 
+As mentioned before, MicroBooNE is exposed to the BNB and NuMI beamlines. Both beamlines produce a copious amount of antimuons that will, when decaying at rest, produce a muon antineutrino, an electron neutrino, and a positron, as shown in equation \ref{mudar_decay_eq}. The energy spectrum of the electron neutrinos from this decay is well-known and can be seen in figure \ref{mudar_nue_energy}. In figures \ref{numi_nue_flux} and \ref{numi_nu_flux} you can see the NuMI flux prediction of $\nu_e$s in MicroBooNE by parentage and the NuMI flux prediction in MicroBooNE of all neutrinos, respectively. 
 
 \begin{equation}
 	\mu^{+} \longrightarrow e^{+} + \nu_e + \bar{\nu}_{\mu}
@@ -77,47 +83,43 @@ Due to the nature of the decay, the electron neutrino will have kinetic energy $
 \begin{figure}[h!]
     \centering
     \includegraphics[width=180mm]{Figures/numi_nue_flux.jpeg}
-    \caption[NumI $\nu_e$ flux in MicroBooNE]{{\textbf{NumI $\nu_e$ flux in MicroBooNE}}\\ On the right, the FHC $\nu_e$ neutrino flux at MicroBooNE from NuMI broken down by parent. Although a 60 MeV threshold is included in the percentages, the absolute value clearly shows the dominance of muon decays. On the left, the FHC neutrino flux is broken down by parent for each neutrino flavor. The percentages shown do not include an integration threshold on the angle. Decays from pions and muons dominate the majority of the flux across all angles \cite{krish_phd}.}
+    \caption[NuMI $\nu_e$ flux in MicroBooNE]{{\textbf{NuMI $\nu_e$ flux in MicroBooNE}}\\ On the left, the FHC $\nu_e$ neutrino flux at MicroBooNE from NuMI broken down by parent. Although a 60 MeV threshold is included in the percentages, the absolute value clearly shows the dominance of muon decays. On the right, the FHC neutrino flux is broken down by parent for each neutrino flavor. The percentages shown do not include an integration threshold on the angle. Decays from pions and muons dominate the majority of the flux across all angles \cite{krish_phd}.}
     \label{numi_nue_flux}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=130mm]{Figures/numi_nu_flux.jpeg}
-    \caption[NumI $\nu$ flux in MicroBooNE]{{\textbf{NumI $\nu$ flux in MicroBooNE}}\\ The flux prediction for all neutrino flavours in the FHC mode in neutrino angle. No integration threshold is applied in the percentages, and the electron neutrino flux percentage is boosted by muon decay at rest. The large angular spread in the flux is due to the positioning of MicroBooNE with respect to the NuMI beamline. The flux peaks at the target location and tails off further into the beamline. From angles above $20$ deg (midway into the decay pipe), the flux remains flat up to the absorber, where there is a large peak in the flux spectrum $\approx 120$ deg. After this, the flux is attenuated rapidly going into the muon-shield $ \ge 120$ deg.\cite{krish_phd}.}
+    \caption[NuMI $\nu$ flux in MicroBooNE]{{\textbf{NuMI $\nu$ flux in MicroBooNE}}\\ The flux prediction for all neutrino flavours in the FHC mode in neutrino angle. No integration threshold is applied in the percentages, and the electron neutrino flux percentage is boosted by muon decay at rest. The large angular spread in the flux is due to the positioning of MicroBooNE with respect to the NuMI beamline. The flux peaks at the target location and tails off further into the beamline. From angles above $20$ deg (midway into the decay pipe), the flux remains flat up to the absorber, where there is a large peak in the flux spectrum $\approx 120$ deg. After this, the flux is attenuated rapidly going into the muon-shield $ \ge 120$ deg.\cite{krish_phd}.}
     \label{numi_nu_flux}
 \end{figure}
 
 \subsection{MeV-scale $\nu_e$-LAr Charged Current Interactions}
 
-As explicitly shown in the \ref{nu_scatter_eq}, when MeV-scale neutrinos scatter in $^{40}$Ar, we have as product a $^{40}\textrm{K}^{*}$ and a $e^{-}$. From now on, I will refer to this electron as the ``main" electron of the signal. The energy of the incoming neutrino can be reconstructed as:
+As explicitly shown in equation \ref{nu_scatter_eq}, when MeV-scale neutrinos scatter from $^{40}$Ar, we have as product a $^{40}\textrm{K}^{*}$ and an electron. From now on, I will refer to this electron as the ``main" electron of the signal. The energy of the incoming neutrino can be reconstructed as:
 
 \begin{equation}
-    E_{\nu} = E_e + \Delta_{final-initial} + T_{recoil} 
+    E_{\nu} = E_e + \Delta_{\textrm{final}-\textrm{initial}} + \textrm{T}_{\textrm{recoil}} 
     \label{E_mudar_nu}
 \end{equation}
-
-where $E_e$ is the total energy of the outcoming electron and $T_{recoil}$ is the kinetic energy of the recoiling nucleus (which is negligible). As for $\Delta_{final-initial}$: 
+where $E_e$ is the total energy of the outcoming electron and $T_{recoil}$ is the kinetic energy of the recoiling nucleus (which is negligible). As for $\Delta_{\textrm{final}-\textrm{initial}}$: 
 
  \begin{equation}
-    \Delta_{final-initial} \equiv m_{final} - m_{initial}  
+    \Delta_{\textrm{final}-\textrm{initial}} \equiv m_{\textrm{final}} - m_{\textrm{initial}}  
     \label{delta_fi}
 \end{equation}
-
-where $m_initial$ is the mass of the initial $^{40}$Ar nucleus, and $m_{final}$ is the mass state of the $^{40}\textrm{K}^{*}$ nucleus. The potassium nucleus can be at different excited states, depending on the event. Therefore, $m_{final}$ can be further described as:
+where $m_\textrm{\textrm{initial}}$ is the mass of the initial $^{40}$Ar nucleus, and $m_{\textrm{final}}$ is the mass state of the $^{40}\textrm{K}^{*}$ nucleus. The potassium nucleus can be at different excited states, depending on the event. Therefore, $m_{\textrm{final}}$ can be further described as:
 
 \begin{equation}
-    m_{final} = m_{final, g.s.} + E_x
+    m_{\textrm{final}} = m_{\textrm{final}, g.s.} + E_x
     \label{mfinal}
 \end{equation}
-
-where $m_{final, g.s.}$ is the ground-state mass of a $^40$K nucleus and $E_x$ is the excitation energy. To reconstruct the total energy from the incoming neutrino, we need to look into the products from the de-excitation of the excited potassium nucleus, which are most commonly photons. Those photons can be indirectly measured in LArTPCs as they scatter on Ar atomic electrons, and the value of $\Delta_{final-initial}$ is given by:
+where $m_{\textrm{final}, g.s.}$ is the ground-state mass of a $^{40}$K nucleus and $E_x$ is the excitation energy. To reconstruct the total energy from the incoming neutrino, we need to look into the products from the de-excitation of the excited potassium nucleus, which are most commonly photons. Those photons can be indirectly measured in LArTPCs as they scatter on argon atomic electrons, and the value of $\Delta_{\textrm{final}-initial}$ is given by:
 
 \begin{equation}
-    \Delta_{final-initial} = m_{g.s. \rightarrow g.s.} + \sum_{j}E_{\gamma, j}   
+    \Delta_{\textrm{final}-\textrm{initial}} = m_{g.s. \rightarrow g.s.} + \sum_{j}E_{\gamma, j}   
     \label{delta_fi_2}
 \end{equation}
-
 where $E_{\gamma,j}$ is the energy of each of the photons emitted and $m_{g.s. \rightarrow g.s.}$ is the mass difference between the ground state of the $^{40}$K nucleus and the ground state of the $^{40}$Ar nucleus, which is $1.5044$ MeV. 
 It is also possible, although less likely, to have the excitation energy of the $^{40}$K high enough such that the de-excitation proceeds with the emission of a nucleon. A few of these channels still leave the daughter nucleus in an excited state, and there is an additional $\gamma$-ray or nucleon emission. This cascade continues until the daughter nucleus reaches the ground state. A diagram representing the different de-excitation channels can be seen in figure \ref{40K_deexcite}
 
@@ -128,13 +130,13 @@ It is also possible, although less likely, to have the excitation energy of the 
     \label{40K_deexcite}
 \end{figure}
 
-The complexity of nuclear structures and the possible final state topologies for those interactions add challenges to the proper energy reconstruction of the supernova neutrino events. Therefore, it is fundamental that we take the opportunity presented by $\mu$DAR $\nu_e$s in MicroBooNE to study these interactions to improve our techniques. 
+The complexity of nuclear structures and the possible final state topologies for those interactions add challenges to the proper energy reconstruction of the supernova neutrino events. Therefore, it is essential that we take the opportunity presented by $\mu$DAR $\nu_e$s in MicroBooNE to study these interactions to improve our techniques. 
 
 
 \section{Simulation of $\mu$DAR Events in MicroBooNE}
 
-To properly evaluate the $\mu$DAR events in MicroBooNE, we count with a chain of different simulation software to mimic the particle production and interactions at each step of the way, from the early stages of the beamline to MicroBooNE's detector response. 
-To explicitly name the sequence, we start at the NuMI beam flux simulation, to the Generates Events for Neutrino Interaction Experiments (GENIE) Generator, and to the Model of Argon Reaction Low Energy Yields (MARLEY) Generator, back to the GENIE again, then to Geant4. All these softwares are integrated into a larger framework called the Liquid Argon Software (LArSoft). I will further go over each of these in this section. 
+To properly evaluate the $\mu$DAR events in MicroBooNE, we utilize a chain of different simulation software to mimic the particle production and interactions at each step of the way, from the early stages of the beamline to MicroBooNE's detector response. 
+To explicitly name the sequence, we start at the NuMI beam flux simulation, to the Generates Events for Neutrino Interaction Experiments (GENIE) Generator, and to the Model of Argon Reaction Low Energy Yields (MARLEY) Generator, back to the GENIE again, then to Geant4. This software is integrated into a larger framework called the Liquid Argon Software (LArSoft). I will further go over each of these in this section. 
 
 \subsection{Geant4}
 
@@ -142,10 +144,10 @@ To explicitly name the sequence, we start at the NuMI beam flux simulation, to t
 
 \subsection{NuMI Beam Simulation}
 
-The NuMI beam flux simulation software has been continually developed by several experiments that use the NuMI beam, such as No$\nu$A, Main Injector Neutrino ExpeRiment to study $\nu-$A interactions (MINER$\nu$A) \cite{minerva}, and Main Injector Neutrino Oscillation Search (MINOS \cite{minos}. The software simulates the proton-target collision and its products, hadrons and muons that decay into neutrinos. MicroBooNE has two Geant4 packages that can used in the NuMI beamline simulation to handle different physics models to describe the hadron production: the g4numi\_flugg and the g4numi. In the g4numi\_flugg, FLUKA software framework is used to model the hadron production and Geant4 is used to handle the geometry of the beamline \cite{fluka}. In the g4numi, Geant4 is used for both model the hadron production and to handle the beamline geometry. In this thesis, we used the latter. 
-The NuMI beam simulation also uses the Package to Predict the FluX (PPFX) to constrain the hadron production modeling and also propagate uncertainties through the beamline simulation \cite{ppfx}. Detailed description on the full NuMI beamline flux simulation can be found at \cite{krish}. 
+The NuMI beam flux simulation software has been continually developed by several experiments that use the NuMI beam, such as No$\nu$A, Main Injector Neutrino ExpeRiment to study $\nu-$A interactions (MINER$\nu$A) \cite{minerva}, and Main Injector Neutrino Oscillation Search (MINOS) \cite{minos}. The software simulates the proton-target collision and its products, hadrons and muons that decay into neutrinos. MicroBooNE has two Geant4 packages that can used in the NuMI beamline simulation to handle different physics models to describe the hadron production: the g4numi\_flugg and the g4numi. In the g4numi\_flugg, FLUKA software framework is used to model the hadron production and Geant4 is used to handle the geometry of the beamline \cite{fluka}. In the g4numi, Geant4 is used for both modeling the hadron production and to handle the beamline geometry. In this thesis, we used the latter. 
+The NuMI beam simulation also uses the Package to Predict the FluX (PPFX) to constrain the hadron production modeling and also propagate uncertainties through the beamline simulation \cite{ppfx}. Detailed description on the full NuMI beamline flux simulation can be found at \cite{krish_phd}. 
 
-Historically, both the NuMI beam and the BNB beam flux simulation had a minimum lower incoming neutrinos energy of $60$ MeV. This lower threshold was removed in the NuMI simulation, which, together with the higher flux of MeV-scale neutrinos, is why we opted to first perform this analysis using the NuMI beam instead of the BNB beam. 
+Historically, both the NuMI beam and the BNB beam flux simulation had a minimum lower incoming neutrino energy of $60$ MeV. This lower threshold was removed in the NuMI simulation, which, together with the higher flux of MeV-scale neutrinos, is why we opted to first perform this analysis using the NuMI beam instead of the BNB beam. 
 
 \subsection{GENIE and MARLEY}
 GENIE and MARLEY are software that falls in a specific category called ``neutrino event generators” and is specialized in neutrino-nucleus interactions. They are equipped with theoretical models of neutrino-nucleus interactions across a wide range of energies and targets. 
@@ -167,7 +169,7 @@ Then, the matrix elements are evaluated by taking two limits:
 
 These calculations lead to the differential cross-section values used by MARLEY. The mathematical steps are all explicitly done at \cite{Gardiner_thesis}. 
 
-After simulating production of the final-state electron using this approach, MARLEY also simulates the de-excitations of the daughter $^{40}$K nucleus. This is done using a combination of tables of measured de-excitation gamma-rays and a Monte Carlo implementation of the Hauser-Feshbach statistical model. Further details are available in \cite{deexcitation-model}. 
+After simulating production of the final-state electron using this approach, MARLEY also simulates the de-excitations of the daughter $^{40}$K nucleus. This is done using a combination of tables of measured de-excitation gamma-rays and a Monte Carlo (MC) implementation of the Hauser-Feshbach statistical model. Further details are available in \cite{deexcitation-model}. 
 
 Since the whole software structure of MicroBooNE was done using GENIE, we kept it in place, using MARLEY only to handle the neutrino-nucleus interactions, but using GENIE as a mediator between the beam simulation and MARLEY and then between MARLEY and Geant4. Since our interest is solely on $\mu$DAR neutrinos, we assume a cross-section equal to zero to all incoming neutrinos with an energy higher than $60$ MeV. 
 
@@ -175,13 +177,13 @@ After that, Geant4 takes over again and simulates the interactions of the outgoi
 
 \section{$\mu$DAR Monte Carlo Simulation in MicroBooNE}
 
-Using the structure described above, we produced a NuMI Monte Carlo (MC) simulation with a total of $5.74378 \times 10^{23}$ POT. For that POT amount, we have with a total of $131,687$ neutrinos interacting near MicroBooNE, being $30,631$ inside the fiducial volume. The values for the fiducial volume dimensions used in this analysis can be seen in table \ref{fiducial}. The energy distribution of the simulated neutrinos and the electrons produced after the interaction, and the interaction vertex x, y and z positions can be seen in figures \ref{sim_energy_dist_figures} and \ref{sim_vertex_dist_figures}, respectively.  
+Using the structure described above, we produced a NuMI Monte Carlo simulation with a total of $5.74,378 \times 10^{23}$ POT. For that POT amount, we have with a total of $131,687$ neutrinos interacting near MicroBooNE, being $30,631$ inside the fiducial volume. The values for the fiducial volume dimensions used in this analysis can be seen in table \ref{fiducial}. The energy distribution of the simulated neutrinos and the electrons produced after the interaction, and the interaction vertex x, y and z positions can be seen in figures \ref{sim_energy_dist_figures} and \ref{sim_vertex_dist_figures}, respectively.  
 
 \begin{table}
 	\begin{center}
 		\begin{tabular}{ccc}
 			\bottomrule
-						 \textbf{Coordinate}	&	\textbf{Lower limit (cm)}	&	\textbf{Higher Limit (cm)}\\
+						 \textbf{Coordinate}	&	\textbf{Lower Boundary (cm)}	&	\textbf{Upper Boundary (cm)}\\
 			\toprule
 			x &	10 & 246.35 \\ 
 			y &	-106.5 & 106.5 \\
@@ -196,26 +198,26 @@ Using the structure described above, we produced a NuMI Monte Carlo (MC) simulat
 \begin{figure}[h!]
     \centering
     \includegraphics[width=160mm]{Figures/NuMI_muDAR_Neutrino_Electron_Energy.jpeg}
-    \caption[Energy Distribution of Simulated $\mu$DAR $\nu_e$s from the NuMI Beam in MicroBooNE and the Electrons Produced in the Interaction]{{\textbf{Energy Distribution of Simulated $\mu$DAR $\nu_e$s from the NuMI Beam in MicroBooNE and the Electrons Produced in the Interaction}}\\}
+    \caption[Energy Distribution of Simulated $\mu$DAR $\nu_e$s from the NuMI Beam in MicroBooNE and the Electrons Produced in the Interaction]{{\textbf{Energy Distribution of Simulated $\mu$DAR $\nu_e$s from the NuMI Beam in MicroBooNE and the Electrons Produced in the Interaction}}\\ On the left, the true neutrino energy distribution. Notice it is the same distribution from figure \ref{mudar_nue_energy}, the theoretical prediction. On the right, the distribution of the electron produced in the argon-neutrino interaction. Notice the energy is slighly shifted down, as expected since the eletron energy has to be lower than the neutrino interaction that produced it.}
     \label{sim_energy_dist_figures}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=160mm]{Figures/NuMI_muDAR_vertex.jpeg}
-    \caption[Interaction Vertex Distribution of Simulated NuMI $\mu$DAR $\nu_e$s using MARLEY]{{\textbf{Interaction Vertex distribution of Simulated NuMI $\mu$DAR $\nu_e$s using MARLEY}}\\ .}
+    \caption[Interaction Vertex Distribution of Simulated NuMI $\mu$DAR $\nu_e$s using MARLEY]{{\textbf{Interaction Vertex distribution of Simulated NuMI $\mu$DAR $\nu_e$s using MARLEY}}\\ Neutrino interaction position in the fiducial volume of MicroBooNE. As expected, the interaction vertex position is uniformly distributed.}
     \label{sim_vertex_dist_figures}
 \end{figure}
 
 \newpage
 \section{Reconstruction of $\mu$DAR Events in MicroBooNE}
 
-To reconstruct the events in MicroBooNE, we count on a chain of reconstruction software that processes the signal, carries it through a low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal noise filter, a deconvolution algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the Monte Carlo simulation.  
+To reconstruct the events in MicroBooNE, we count on a chain of reconstruction software that processes the signal, carries it through a low level event reconstruction, up to higher level event reconstruction. In MicroBooNE, all of those are done using reconstruction algorithms that are part of LArSoft. To name the chain we used for this analysis: the signal is processed through a signal noise filter, a deconvolution algorithm, a hit finding algorithm, and the blip reconstruction algorithm (that handles two steps: cluster finding and plane matching). I will go over what each of those steps do in this chapter, and how the final algorithm performs in the MC simulation.  
 
 \subsection{Signal Processing}
 
 Once the detector captures the signals presented in figure \ref{uboone_digital_signal}, we need to convert this raw signal into usable information. 
-Initially, the wires record any measured voltage as a function of time in the LArTPC during the readout window, which means it will include a lot of noise from various sources. Therefore, our first step is to pass the raw data through a noise filter algorithm. Deatils on it can be found on paper \cite{noise_filter}. You can see an example of the filters performance in figure \ref{noise_filter}. 
+Initially, the wires record any measured voltage as a function of time in the LArTPC during the readout window, which means it will include noise from various sources, in addition to the signals of interest.. Therefore, our first step is to pass the raw data through a noise filter algorithm. Details on it can be found on paper \cite{noise_filter}. You can see an example of the filters performance in figure \ref{noise_filter}. 
 
 \begin{figure}[h!]
     \centering
@@ -239,7 +241,7 @@ The first low level reconstruction done in the signal is the ``hit finding". In 
 
 \subsection{Pandora}
 
-Pandora is the multi-algorithm pattern recognition framework used by MicroBooNE to identify and reconstruct tracks in the LArTPC. It takes in the hits information in each plane and combines them to build three 2D images. Assuming the drift (x) direction is common among them, Pandora combines the different views and forms a 3D reconstruction. Beyond that, Pandora uses pattern recognition to identify the topology of the events. In a first step, Pandora tags cosmic muons and removes the associated hits. Once we have a cosmic-muons-free hit collection, Pandora works by identifying neutrino interaction vertices and reconstructing tracks and showers from it. You can see an example of a simulated neutrino interaction reconstructed using Pandora in \ref{pandora}. More information on the Pandora algorithms' use in MicroBooNE can be found in the paper \cite{pandora}.
+Pandora is the multi-algorithm pattern recognition framework used by MicroBooNE to identify and reconstruct tracks in the LArTPC. It takes in the hits information in each plane and combines them to build three 2D images. Given that the drift direction (x) is common among them, Pandora combines the different views and forms a 3D reconstruction. Beyond that, Pandora uses pattern recognition to identify the topology of the events. In a first step, Pandora tags cosmic muons and removes the associated hits. Once we have a cosmic-muons-free hit collection, Pandora works by identifying neutrino interaction vertices and reconstructing tracks and showers from it. You can see an example of a simulated neutrino interaction reconstructed using Pandora in \ref{pandora}. More information on the Pandora algorithms' used in MicroBooNE can be found in their paper at \cite{pandora}.
 
 Although Pandora is optimized to reconstruct tracks, it is not developed to identify smaller, blip-like depositions characteristic of the MeV-scale neutrino interactions. In this work, we use a combination of Pandora and Blip Reconstruction algorithms to identify the $\mu$DAR neutrino candidates. 
 
@@ -250,7 +252,6 @@ Although Pandora is optimized to reconstruct tracks, it is not developed to iden
     \label{pandora}
 \end{figure}
 
-\newpage
 \subsection{Blip Reconstruction}
 The Blip Reconstruction is a class of algorithms that identifies MeV-scale charge depositions in the LArTPC and reconstructs them into 3D clusters. Due to their nature, those depositions resemble point-like signals, which we call ``blips". Their reconstruction is divided into two parts: the cluster finding and the plane matching. 
 
@@ -328,7 +329,7 @@ As a first approach, this analysis focus on identifying the main electrons from 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=90mm]{Figures/shower_evd_1.png}
-    \caption[Event display of a background electromagnetic shower from the GENIE $\nu_{mu}$ simulated events in MicroBooNE.]{{\textbf{Event display of a background electromagnetic shower from the GENIE $\nu_{mu}$ simulated events in MicroBooNE.}}\\ This event display shows an electromagnetic shower found in the GENIE $\nu_{mu}$ sample. Several small shower pieces are mistakenly identified as $\mu$DAR electron candidates.}
+    \caption[Event display of a background electromagnetic shower from the GENIE $\nu_{\mu}$ simulated events in MicroBooNE.]{{\textbf{Event display of a background electromagnetic shower from the GENIE $\nu_{\mu}$ simulated events in MicroBooNE.}}\\ This event display shows an electromagnetic shower found in the GENIE $\nu_{\mu}$ sample. Several small shower pieces are mistakenly identified as $\mu$DAR electron candidates.}
     \label{bkg_evd_1}
 \end{figure}
 
@@ -379,28 +380,28 @@ To evaluate the performance of the blip reconstruction algorithm in the $\mu$DAR
     \label{reco_vs_true_vertex_z}
 \end{figure}
 
-To thoroughly evaluate the background and make an informed choice on cuts for the selection, we used three different simulated MC (GENIE $\nu_{\mu}$, GENIE $\nu_{e}$, and MARLEY) and EXT NuMI data. In the GENIE $\nu_{\mu}$, we have simulated $\nu_{\mu}$ events overlayed with EXT unbiased data. In the GENIE $\nu_{e}$, we have simulated $\nu_{e}$ events overlayed with EXT unbiased data. In the MARLEY, we have simulated $\mu$DAR $\nu_e$ events overlayed with EXT unbiased data. We evaluate the background contribution of true simulated events and the overlayed cosmic rays for each MC sample. Each must be evaluated individually because of the different neutrino contributions in the beam and cosmic rays. The background is broken into its five contributions: from EXT cosmic rays, from GENIE $\nu_{e}$, from GENIE $\nu_{mu}$, from GENIE $\nu_{e}$ cosmic rays, and from GENIE $\nu_{mu}$ cosmic rays. 
+To thoroughly evaluate the background and make an informed choice on cuts for the selection, we used three different simulated MC (GENIE $\nu_{\mu}$, GENIE $\nu_{e}$, and MARLEY) and EXT NuMI data. In the GENIE $\nu_{\mu}$, we have simulated $\nu_{\mu}$ events overlayed with EXT unbiased data. In the GENIE $\nu_{e}$, we have simulated $\nu_{e}$ events overlayed with EXT unbiased data. In the MARLEY, we have simulated $\mu$DAR $\nu_e$ events overlayed with EXT unbiased data. We evaluate the background contribution of true simulated events and the overlayed cosmic rays for each MC sample. Each must be evaluated individually because of the different neutrino contributions in the beam and cosmic rays. The background is broken into its five contributions: from EXT cosmic rays, from GENIE $\nu_{e}$, from GENIE $\nu_{\mu}$, from GENIE $\nu_{e}$ cosmic rays, and from GENIE $\nu_{\mu}$ cosmic rays. 
 
 The first cut applied in the selection to reject background is the fiducial volume cut to reject blips in our selection. Blips closer to the corners of the detector are more likely to be from cosmic rays and therefore are rejected, as shown in figures \ref{vertex_X},\ref{vertex_Y}, and \ref{vertex_Z}. The reconstructed blip position corresponds to the middle of the track. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/vertex_X.pdf}
-    \caption[Reconstructed Blip X Position.]{{\textbf{Reconstructed Blip X Position.}}\\ Distribution of reconstructed blip X position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
+    \caption[Reconstructed Blip X Position.]{{\textbf{Reconstructed Blip X Position.}}\\ Distribution of reconstructed blip X position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{\mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
     \label{vertex_X}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/vertex_Y.pdf}
-    \caption[Reconstructed Blip Y Position.]{{\textbf{Reconstructed Blip Y Position.}}\\ Distribution of reconstructed blip Y position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
+    \caption[Reconstructed Blip Y Position.]{{\textbf{Reconstructed Blip Y Position.}}\\ Distribution of reconstructed blip Y position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{\mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
     \label{vertex_Y}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/vertex_Z.pdf}
-    \caption[Reconstructed Blip Z Position.]{{\textbf{Reconstructed Blip Z Position.}}\\ Distribution of reconstructed blip Z position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
+    \caption[Reconstructed Blip Z Position.]{{\textbf{Reconstructed Blip Z Position.}}\\ Distribution of reconstructed blip Z position for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{\mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines mark the acceptance cuts on the event selection. All the events below the left mark or after the right mark were rejected.}
     \label{vertex_Z}
 \end{figure}
 
@@ -410,25 +411,25 @@ The distribution of those cuts for simulated signal and background can be seen i
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/blip_size.pdf}
-    \caption[Reconstructed Blip Size.]{{\textbf{Reconstructed Blip Size.}}\\ Distribution of reconstructed size for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The gray vertical lines represent the cuts applied.}
+    \caption[Reconstructed Blip Size.]{{\textbf{Reconstructed Blip Size.}}\\ Distribution of reconstructed size for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{\mu}$,and Overlay GENIE $\nu_{e}$. The gray vertical lines represent the cuts applied.}
  \label{blip_size}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/Energy_MC.pdf}
-    \caption[Reconstructed Energy.]{{\textbf{Reconstructed Energy.}}\\ Distribution of reconstructed energy for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines represent the energy cut.}
+    \caption[Reconstructed Energy.]{{\textbf{Reconstructed Energy.}}\\ Distribution of reconstructed energy for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{\mu}$,and Overlay GENIE $\nu_{e}$. The vertical gray lines represent the energy cut.}
  \label{blip_energy}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=120mm]{Figures/blip_n_planes.pdf}
-    \caption[Number of Planes Cluster-Matched.]{{\textbf{Number of Planes Cluster-Matched.}}\\ Distribution of the number of planes cluster-matched for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{mu}$, and Overlay GENIE $\nu_{e}$. It is required that there is a cluster match between all three planes. The vertical gray line represents the cut.}
+    \caption[Number of Planes Cluster-Matched.]{{\textbf{Number of Planes Cluster-Matched.}}\\ Distribution of the number of planes cluster-matched for MARLEY simulated events, overlay cosmic-rays, Overlay GENIE $\nu_{\mu}$, and Overlay GENIE $\nu_{e}$. It is required that there is a cluster match between all three planes. The vertical gray line represents the cut.}
  \label{blip_nplanes}
 \end{figure}
 
-In total, we are left with $8,776$ selected background events, POT normalized to the amount of POT in NuMI Run1 data, and $1$ selected signal events in MARLEY MC. Therefore, this work's selection purity computes $0.011\%$. The absolute numbers for blip candidates for each sample, their POT amounts, and the POT normalization to data POT can be seen in \ref{bkg}. In the MARLEY $\nu_{e}$ MC sample, we have a total of $30,631$ neutrinos interacting in the fiducial volume, and $2,720$ truth-matched candidates were selected. Therefore, our selection efficiency is $8.88\%$.  
+In total, we are left with $8,776$ selected background events, POT normalized to the amount of POT in NuMI Run1 data, and $1$ selected signal events in MARLEY MC. Therefore, this work's selection purity computes $0.011\%$. The absolute numbers for blip candidates for each sample, their POT amounts, and the POT normalization to data POT can be seen in \ref{bkg}. In the MARLEY $\nu_{e}$ MC sample, we have a total of $30,631$ neutrinos interacting in the fiducial volume, and $2,720$ truth-matched candidates were selected. Therefore, our selection efficiency, in MC, is $8.88\%$. In the NuMI Run1 data, that has a total of 2 $\times 10^{20}$ POT, we have $9,176$ $\mu$DAR $\nu_e$ electron candidates.   
 
 \begin{table}[h!]
     \centering
@@ -438,13 +439,13 @@ In total, we are left with $8,776$ selected background events, POT normalized to
 		\textbf{Origin} & \textbf{Selected}	&	\textbf{POT in Sample}	&	\textbf{NuMI Run1 Beam} & \textbf{POT normalization} & \textbf{Selected Events Data}\\
         & \textbf{Events} & & \textbf{On Data POT Limit} & \textbf{factor} & \textbf{POT Normalized}\\
 		\toprule
-		MARLEY Signal & 2720 & 5.7437823 $\times 10^{23}$ & 2 $\times 10^{20}$ & 3.48 $\times 10^{-4}$ & 0.95 \\ 
-		MARLEY Cosmic Ray & 1933 & 5.7437823 $\times 10^{23}$ & 2 $\times 10^{20}$ & 3.48 $\times 10^{-4}$ & 0.67 \\
-		GENIE  $\nu_{\mu}$ Cosmic Ray &  2090  &  1.05669 $\times 10^{21}$  &  2 $\times 10^{20}$ &  1.89 $\times 10^{-1}$ & 1114.23 \\ 
-        GENIE  $\nu_{\mu}$ & 5887 & 1.05669 $\times 10^{21}$ & 2 $\times 10^{20}$ & 1.89 $\times 10^{-1}$ & 395.58 \\
-        GENIE  $\nu_{e}$ Cosmic Ray & 10471 & 8.11503 $\times 10^{22}$ & 2 $\times 10^{20}$ & 2.47$\times 10^{-3}$ & 25.81 \\
-        GENIE  $\nu_{e}$ & 13095 & 8.11503 $\times 10^{22}$ & 2 $\times 10^{20}$ & 2.47$\times 10^{-3}$ & 32.27 \\
-        EXT & 12586 & 9.19923274 $\times 10^{6}$ & 5.268051 $\times 10^{6}$ & 5.73 $\times 10^{-1}$ & 7207.52 \\
+		MARLEY Signal & 2720 & 5.74 $\times 10^{23}$ & 2 $\times 10^{20}$ & 3.48 $\times 10^{-4}$ & 0.95 \\ 
+		MARLEY Cosmic Ray & 1933 & 5.74 $\times 10^{23}$ & 2 $\times 10^{20}$ & 3.48 $\times 10^{-4}$ & 0.67 \\
+		GENIE  $\nu_{\mu}$ Cosmic Ray &  2090  &  1.06 $\times 10^{21}$  &  2 $\times 10^{20}$ &  1.89 $\times 10^{-1}$ & 1114.23 \\ 
+        GENIE  $\nu_{\mu}$ & 5887 & 1.06 $\times 10^{21}$ & 2 $\times 10^{20}$ & 1.89 $\times 10^{-1}$ & 395.58 \\
+        GENIE  $\nu_{e}$ Cosmic Ray & 10471 & 8.12 $\times 10^{22}$ & 2 $\times 10^{20}$ & 2.47$\times 10^{-3}$ & 25.81 \\
+        GENIE  $\nu_{e}$ & 13095 & 8.12 $\times 10^{22}$ & 2 $\times 10^{20}$ & 2.47$\times 10^{-3}$ & 32.27 \\
+        EXT & 12586 & 9.20 $\times 10^{6}$ & 5.27 $\times 10^{6}$ & 5.73 $\times 10^{-1}$ & 7207.52 \\
 		\hline
 	\end{tabular}
     \end{scriptsize}
@@ -453,7 +454,7 @@ In total, we are left with $8,776$ selected background events, POT normalized to
 \end{table}
 
 \newpage
-\subsection{Data- Monte Carlo agreement}
+\subsection{Data- Monte Carlo Agreement}
 When looking at the MC-data agreement for electron energy and track size in figures \ref{data_mc_energy} and \ref{data_mc_size}, we can see a very good agreement. This is because this analysis is dominated by cosmic ray background.
 
 
@@ -471,9 +472,30 @@ When looking at the MC-data agreement for electron energy and track size in figu
     \label{data_mc_size}
 \end{figure}
 
-\newpage
-\subsection{Sensitivity to nuclear structure theoretical models}
-By using the BPULE program, which can be found at \cite{BPULE}, we are able to use a Bayesian approach to calculate the upper limit for $mu$DAR $\nu_e$-LAr cross-section. 
-For the Bayesian prior for the expected event counts, we assumed an m=2, which in the papers notations corresponds to $1/\sqrt{s + b}$
-Assuming a confidence level of $90\%$, with inclusion of systematic uncertainties in background expectation and signal efficiency. 
+\clearpage
+\subsection{Sensitivity to Cross-Section Model}
+Given that our signal follows a Poisson distribution, we can use the Bayesian approach to calculate the upper limit for $mu$DAR $\nu_e$-LAr cross-section. For that, we are going to use the BPULE algorithm, which can be found at \cite{BPULE}. 
+In doing that, we have the following expression
 
+\begin{equation}
+    1-\textrm{CL} =\frac{\Gamma(\textrm{n}-\textrm{m}+1, \textrm{S}_{\textrm{up}}+\textrm{b})}{\Gamma(\textrm{n}-\textrm{m}+1,\textrm{b})}
+\end{equation}
+
+where $\Gamma$ are gamma functions, $\textrm{S}_{\textrm{up}}$ is the event count upper limit, b is 
+the background expectation, n is the number of oberserved events, and m is a variable associated with the prior pdf , as the following
+
+\begin{equation}
+    \Pi(s) \propto \frac{1}{(s + b)^m}
+\end{equation}
+where s is the signal. We should pick a value for m. The author of the paper states that m=$0.5$ is "the most versatile choice among the Bayesian methods". Therefore, this is the one I will use in this work.  
+For our case, b=$8,776$, m=$0.5$, n = $9,176$, and CL=$0.9$, solving it numerically, we have our upper number of events computed to $\textrm{S}_{\textrm{up}}=523.4$.
+
+To compile what limit this implies on the cross-section, we have that
+\begin{equation}
+    <\sigma> = \frac{\textrm{S}_{\textrm{up}}}{\textrm{POT}_\textrm{data}\times\Phi_{\textrm{MC}}\times\textrm{N}_\textrm{Ar}\times \epsilon}
+\end{equation}
+where $\Phi_{\textrm{MC}} = 2.39569\times 10^{-10}$ / cm$^2$POT is the estimated flux of $\mu$DAR $\nu_e$ is in MicroBooNE, $\textrm{N}_\textrm{Ar} = 6.1782133\times 10^{29}$ is the estimated number of argon atoms in the fiducial volume we used. The efficiency computed from MC is $\epsilon=8.88\%$ and the $\textrm{POT}_\textrm{data} = 2\times 10^{20}$. Computing that, we have that our upper limit cross-section estimation is 
+\begin{equation}
+    <\sigma> = 1.99\times10^{-37} \textrm{cm}^2 / \textrm{Ar}
+\end{equation}
+which is $551.879$ times the nominal MARLEY prediction,  $<\sigma> = 3.60586\times 10^{-40} \textrm{cm}^2 / \textrm{Ar}$.
