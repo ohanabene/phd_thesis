@@ -173,8 +173,9 @@
    \hfill\\
    \hfill Date: \underline{\hspace{4cm}}
   }\\[\baselineskip]
-  \vspace*{0.05\textheight}
+  \vfill
   \end{titlepage}%
+  \verso
 }
 
 \newcommand{\paginaTECA}{\begingroup
@@ -293,19 +294,15 @@
 \newcommand{\notaagradecimentoingles}{\chapter*{Acknowledgements}
   \addcontentsline{toc}{chapter}{\protect\numberline{}Acknowledgements}
   \pagenumbering{roman}
-  \setcounter{page}{9}
+  %\setcounter{page}{9}
   \the\agradecimentoingles
-  \vspace*{\fill}
-  \verso
 }
 
 \newcommand{\notaagradecimento}{\chapter*{Agradecimentos}
   \addcontentsline{toc}{chapter}{\protect\numberline{}Agradecimentos}
-  \pagenumbering{roman}
-  \setcounter{page}{9}
+  %\pagenumbering{roman}
+  %\setcounter{page}{9}
   \the\agradecimento
-  \vspace*{\fill}
-  \verso
 }
 
 \newcommand{\resumos}{\chapter*{Abstract}
